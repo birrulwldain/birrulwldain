@@ -13,22 +13,53 @@ from typing import List, Dict, Tuple, Optional
 from collections import Counter
 import hashlib
 from datetime import datetime
+import logging  # Modul logging untuk HPC
 try:
     import intel_extension_for_pytorch as ipex  # Optimasi untuk CPU Intel
 except ImportError:
     ipex = None
-    print("Peringatan: Intel Extension for PyTorch tidak tersedia. Lanjutkan tanpa optimasi IPEX.")
+    # Tidak mencatat peringatan di sini, ditangani oleh logging
+
+# Konfigurasi logging
+def setup_logging(base_dir: str, job_id: str = "unknown"):
+    """Konfigurasi logger untuk stdout dan file dengan format terstruktur."""
+    log_dir = os.path.join(base_dir, "logs")
+    os.makedirs(log_dir, exist_ok=True)
+    log_file = os.path.join(log_dir, f"spectral_simulation_{job_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
+    
+    logger = logging.getLogger('SpectralSimulation')
+    logger.setLevel(logging.INFO)  # Level default: INFO
+    
+    # Handler untuk stdout (kompatibel dengan SLURM)
+    stdout_handler = logging.StreamHandler()
+    stdout_handler.setLevel(logging.INFO)
+    
+    # Handler untuk file
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.INFO)
+    
+    # Format log: [timestamp] [level] pesan
+    formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
+    stdout_handler.setFormatter(formatter)
+    file_handler.setFormatter(formatter)
+    
+    # Hapus handler lama jika ada
+    logger.handlers.clear()
+    logger.addHandler(stdout_handler)
+    logger.addHandler(file_handler)
+    
+    return logger
 
 # Konfigurasi simulasi
 SIMULATION_CONFIG = {
-    "resolution": 2048,  # Dikurangi untuk efisiensi CPU
+    "resolution": 4096,
     "wl_range": (200, 900),
-    "sigma": 0.1,  # nm, untuk pelebaran Gaussian
+    "sigma": 0.1,
     "target_max_intensity": 0.8,
-    "convolution_sigma": 0.1,  # nm, untuk konvolusi spektrum
-    "num_samples": 500,  # Dikurangi untuk uji coba
-    "temperature_range": [6000, 8000, 10000, 12000, 14000, 15000],  # K
-    "electron_density_range": np.logspace(15, 17, 10).tolist(),  # cm^-3
+    "convolution_sigma": 0.1,
+    "num_samples": 500,  # Ubah ke 10000 untuk skala besar
+    "temperature_range": [6000, 8000, 10000, 12000, 14000, 15000],
+    "electron_density_range": np.logspace(15, 17, 10).tolist(),
 }
 
 # Konstanta fisika
@@ -47,8 +78,11 @@ class DataFetcher:
     def __init__(self, hdf_path: str):
         self.hdf_path = hdf_path
         self.delta_E_max: Dict[str, float] = {}
+        self.missing_data_count: Dict[str, int] = {}  # Batasi peringatan berulang
+        self.logger = logging.getLogger('SpectralSimulation')
 
     def get_nist_data(self, element: str, sp_num: int) -> Tuple[List[List], float]:
+        elem_key = f"{element}_{sp_num}"
         try:
             with pd.HDFStore(self.hdf_path, mode='r') as store:
                 df = store.get('nist_spectroscopy_data')
@@ -56,7 +90,9 @@ class DataFetcher:
                 required_columns = ['ritz_wl_air(nm)', 'Aki(s^-1)', 'Ek(eV)', 'Ei(eV)', 'g_i', 'g_k']
 
                 if filtered_df.empty or not all(col in df.columns for col in required_columns):
-                    print(f"Tidak ada data untuk {element}_{sp_num} di dataset NIST")
+                    self.missing_data_count[elem_key] = self.missing_data_count.get(elem_key, 0) + 1
+                    if self.missing_data_count[elem_key] <= 3:  # Batasi hingga 3 peringatan
+                        self.logger.warning(f"Tidak ada data untuk {elem_key} di dataset NIST")
                     return [], 0.0
 
                 filtered_df = filtered_df.dropna(subset=required_columns)
@@ -77,17 +113,19 @@ class DataFetcher:
 
                 filtered_df['delta_E'] = abs(filtered_df['Ek(eV)'] - filtered_df['Ei(eV)'])
                 if filtered_df.empty:
-                    print(f"Tidak ada transisi valid untuk {element}_{sp_num} di rentang panjang gelombang")
+                    self.missing_data_count[elem_key] = self.missing_data_count.get(elem_key, 0) + 1
+                    if self.missing_data_count[elem_key] <= 3:
+                        self.logger.warning(f"Tidak ada transisi valid untuk {elem_key} di rentang panjang gelombang")
                     return [], 0.0
 
                 filtered_df = filtered_df.sort_values(by='Aki(s^-1)', ascending=False)
                 delta_E_max = filtered_df['delta_E'].max()
                 delta_E_max = 0.0 if pd.isna(delta_E_max) else delta_E_max
-                self.delta_E_max[f"{element}_{sp_num}"] = delta_E_max
+                self.delta_E_max[elem_key] = delta_E_max
 
                 return filtered_df[required_columns + ['Acc']].values.tolist(), delta_E_max
         except Exception as e:
-            print(f"Error mengambil data NIST untuk {element}_{sp_num}: {str(e)}")
+            self.logger.error(f"Error mengambil data NIST untuk {elem_key}: {str(e)}")
             return [], 0.0
 
 class SpectrumSimulator:
@@ -112,10 +150,10 @@ class SpectrumSimulator:
         self.wavelengths = np.linspace(self.wl_range[0], self.wl_range[1], self.resolution, dtype=np.float32)
         self.gaussian_cache: Dict[float, np.ndarray] = {}
         self.element_label = f"{element}_{ion}"
-        self.device = torch.device("cpu")  # Paksa penggunaan CPU
+        self.device = torch.device("cpu")
+        self.logger = logging.getLogger('SpectralSimulation')
         if ipex:
-            # Optimasi untuk CPU Intel
-            torch.set_num_threads(16)  # Sesuaikan dengan jumlah core HPC
+            torch.set_num_threads(16)
             self.wavelengths = torch.tensor(self.wavelengths, device=self.device, dtype=torch.float32)
 
     def _partition_function(self, energy_levels: List[float], degeneracies: List[float], temperature: float) -> float:
@@ -131,12 +169,16 @@ class SpectrumSimulator:
             x_tensor = torch.tensor(self.wavelengths, device=self.device, dtype=torch.float32)
             center_tensor = torch.tensor(center, device=self.device, dtype=torch.float32)
             sigma_tensor = torch.tensor(self.sigma, device=self.device, dtype=torch.float32)
-            with torch.cpu.amp.autocast():  # Gunakan bf16 untuk efisiensi
+            with torch.cpu.amp.autocast():
                 gaussian = torch.exp(-0.5 * ((x_tensor - center_tensor) / sigma_tensor) ** 2) / (sigma_tensor * torch.sqrt(torch.tensor(2 * np.pi)))
             self.gaussian_cache[center] = gaussian.cpu().numpy().astype(np.float32)
         return self.gaussian_cache[center]
 
     def simulate(self, atom_percentage: float = 1.0) -> Tuple[np.ndarray, List[np.ndarray], List[List[int]], List[List[int]], List[float], List[List[Dict]], List[np.ndarray]]:
+        if not self.nist_data:
+            self.logger.warning(f"Tidak ada data NIST untuk {self.element_label}, melewati simulasi")
+            return self.wavelengths, [], [], [], [], [], []
+
         spectra, peak_indices, peak_labels, temperatures, intensity_data, contributions = [], [], [], [], [], []
         levels = {}
 
@@ -154,7 +196,7 @@ class SpectrumSimulator:
                 continue
 
         if not levels:
-            print(f"Peringatan: Tidak ada tingkat energi valid untuk {self.element_label}")
+            self.logger.warning(f"Tidak ada tingkat energi valid untuk {self.element_label}")
             return self.wavelengths, [], [], [], [], [], []
 
         energy_levels = list(levels.keys())
@@ -184,7 +226,7 @@ class SpectrumSimulator:
                             start_idx = max(0, idx - len(gaussian_contribution) // 2)
                             end_idx = min(self.resolution, start_idx + len(gaussian_contribution))
                             if start_idx < end_idx:
-                                with torch.cpu.amp.autocast():  # Optimasi bf16
+                                with torch.cpu.amp.autocast():
                                     intensities[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
                                     element_contributions[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
                             temp_intensity_data.append({
@@ -218,10 +260,11 @@ class MixedSpectrumSimulator:
         self.electron_density_range = config["electron_density_range"]
         self.delta_E_max = delta_E_max
         self.wavelengths = np.linspace(self.wl_range[0], self.wl_range[1], self.resolution, dtype=np.float32)
-        self.device = torch.device("cpu")  # Paksa penggunaan CPU
+        self.device = torch.device("cpu")
         self.intensity_threshold = 0.01
         self.current_T: float = 0.0
         self.current_n_e: float = 0.0
+        self.logger = logging.getLogger('SpectralSimulation')
 
     def _normalize_intensity(self, intensity: np.ndarray, target_max: float) -> np.ndarray:
         intensity_tensor = torch.tensor(intensity, device=self.device, dtype=torch.float32)
@@ -244,7 +287,7 @@ class MixedSpectrumSimulator:
         kernel = kernel.unsqueeze(0).unsqueeze(0)
         spectrum_tensor = spectrum_tensor.unsqueeze(0).unsqueeze(0)
         with torch.cpu.amp.autocast():
-            convolved = F.conv1d(spectrum_tensor, kernel, padding=kernel_size//2).squeeze().cpu().numpy()
+            convolved = F.conv1d(spectrum_tensor, kernel, padding=kernel_size // 2).squeeze().cpu().numpy()
         return convolved.astype(np.float32)
 
     def _saha_ratio(self, ion_energy: float, temp: float, electron_density: float) -> float:
@@ -259,6 +302,9 @@ class MixedSpectrumSimulator:
         return saha_factor * np.exp(-ion_energy / (k_B * temp))
 
     def generate_sample(self, ionization_energies: Dict[str, float]) -> Tuple[Optional[np.ndarray], Optional[np.ndarray], Optional[np.ndarray], Optional[Dict]]:
+        if self.current_n_e > 5e16 and self.current_T < 8000:
+            self.logger.warning(f"n_e tinggi ({self.current_n_e:.2e} cm^-3) dan T rendah ({self.current_T} K) dapat menyebabkan self-absorption")
+
         temp = self.current_T
         electron_density = self.current_n_e
         num_target_elements = 7
@@ -273,15 +319,12 @@ class MixedSpectrumSimulator:
                     delta_E_values.append(delta_E)
         delta_E_max = max(delta_E_values) if delta_E_values else 4.0
 
-        if electron_density > 5e16 and temp < 8000:
-            print(f"Peringatan: n_e tinggi ({electron_density:.2e} cm^-3) dan T rendah ({temp} K) dapat menyebabkan self-absorption.")
-
         atom_percentages_dict = {}
         total_target_percentage = 0.0
         for base_elem, elem_neutral, elem_ion in selected_pairs:
             ion_energy = ionization_energies.get(f"{base_elem} I", 0.0)
             if ion_energy == 0.0:
-                print(f"Peringatan: Tidak ada energi ionisasi untuk {base_elem} I")
+                self.logger.warning(f"Tidak ada energi ionisasi untuk {base_elem} I")
                 continue
             saha_ratio = self._saha_ratio(ion_energy, temp, electron_density)
             total_percentage = np.random.uniform(5, 20)
@@ -309,7 +352,7 @@ class MixedSpectrumSimulator:
         selected_simulators = [sim for sim in self.simulators if f"{sim.element}_{sim.ion}" in selected_target_elements]
 
         if not selected_simulators:
-            print(f"Peringatan: Tidak ada simulator valid untuk {selected_target_elements}")
+            self.logger.warning(f"Tidak ada simulator valid untuk {selected_target_elements}")
             return None, None, None, None
 
         mixed_spectrum = np.zeros(self.resolution, dtype=np.float32)
@@ -326,7 +369,7 @@ class MixedSpectrumSimulator:
                     break
 
         if np.max(mixed_spectrum) == 0:
-            print(f"Peringatan: Tidak ada spektrum dihasilkan untuk T={temp} K")
+            self.logger.warning(f"Tidak ada spektrum dihasilkan untuk T={temp} K")
             return None, None, None, None
 
         convolved_spectrum = self._convolve_spectrum(mixed_spectrum, self.convolution_sigma)
@@ -361,6 +404,7 @@ class DatasetGenerator:
         self.num_samples = config["num_samples"]
         self.combinations_json_path = None
         self.used_combinations = set()
+        self.logger = logging.getLogger('SpectralSimulation')
 
     def _calculate_lte_electron_density(self, temp: float, delta_E: float) -> float:
         return 1.6e12 * (temp ** 0.5) * (delta_E ** 3)
@@ -382,8 +426,9 @@ class DatasetGenerator:
                     data = json.load(f)
                     for entry in data:
                         self.used_combinations.add(entry['hash'])
+                self.logger.info(f"Memuat {len(self.used_combinations)} kombinasi dari {self.combinations_json_path}")
             except Exception as e:
-                print(f"Error memuat kombinasi JSON: {str(e)}")
+                self.logger.error(f"Error memuat kombinasi JSON: {str(e)}")
 
     def _save_combination(self, combination: Dict) -> None:
         if not self.combinations_json_path:
@@ -397,7 +442,7 @@ class DatasetGenerator:
             with open(self.combinations_json_path, 'w') as f:
                 json.dump(data, f, indent=4)
         except Exception as e:
-            print(f"Error menyimpan kombinasi JSON: {str(e)}")
+            self.logger.error(f"Error menyimpan kombinasi JSON: {str(e)}")
 
     def _generate_sample_params(self, delta_E_max_dict: Dict[str, float]) -> List[Tuple[float, float]]:
         num_temperatures = len(self.temperature_range)
@@ -412,7 +457,7 @@ class DatasetGenerator:
             n_e_min = self._calculate_lte_electron_density(T, delta_E_max_value)
             valid_n_e = [n_e for n_e in self.electron_density_range if n_e >= n_e_min]
             if not valid_n_e:
-                print(f"Peringatan: Tidak ada densitas elektron valid untuk T={T} K. Menggunakan seluruh rentang.")
+                self.logger.warning(f"Tidak ada densitas elektron valid untuk T={T} K. Menggunakan seluruh rentang")
                 valid_n_e = self.electron_density_range
 
             max_ne_per_temp = min(len(valid_n_e), 5)
@@ -441,7 +486,7 @@ class DatasetGenerator:
                     total_remaining -= 1
 
         if len(sample_params) < self.num_samples:
-            print(f"Peringatan: Hanya {len(sample_params)} sampel dihasilkan, menggandakan...")
+            self.logger.warning(f"Hanya {len(sample_params)} sampel dihasilkan, menggandakan...")
             while len(sample_params) < self.num_samples:
                 idx = np.random.randint(0, len(sample_params))
                 sample_params.append(sample_params[idx])
@@ -458,6 +503,7 @@ class DatasetGenerator:
         processed_dir: str,
         drive_processed_dir: str
     ) -> None:
+        self.logger.info("Memulai pembuatan dataset")
         np.random.seed(42)
         self.combinations_json_path = os.path.join(drive_processed_dir, "combinations.json")
         self._load_used_combinations()
@@ -469,7 +515,7 @@ class DatasetGenerator:
         temps = [param[0] for param in sample_params]
         temp_counts = Counter(temps)
         for temp, count in temp_counts.items():
-            print(f"Distribusi akhir - Suhu {temp} K: {count} sampel ({count/self.num_samples*100:.2f}%)")
+            self.logger.info(f"Distribusi suhu - Suhu {temp} K: {count} sampel ({count/self.num_samples*100:.2f}%)")
 
         for i, (T, n_e) in enumerate(tqdm(sample_params, desc="Menghasilkan dataset")):
             mixed_simulator.current_T = T
@@ -487,7 +533,7 @@ class DatasetGenerator:
                 wavelengths, spectrum, labels, atom_percentages = result
                 combination_hash = self._hash_combination(T, n_e, atom_percentages)
                 if combination_hash in self.used_combinations:
-                    print(f"Kombinasi sudah ada untuk T={T} K, n_e={n_e:.2e} cm^-3, coba ulang ({attempt + 1}/{max_attempts})")
+                    self.logger.debug(f"Kombinasi sudah ada untuk T={T} K, n_e={n_e:.2e} cm^-3, coba ulang ({attempt + 1}/{max_attempts})")
                     attempt += 1
                     continue
 
@@ -510,17 +556,18 @@ class DatasetGenerator:
                 sample_generated = True
 
             if not sample_generated:
-                print(f"Peringatan: Gagal menghasilkan sampel unik untuk T={T} K, n_e={n_e:.2e} cm^-3 setelah {max_attempts} percobaan")
+                self.logger.warning(f"Gagal menghasilkan sampel unik untuk T={T} K, n_e={n_e:.2e} cm^-3 setelah {max_attempts} percobaan")
 
-            if (i + 1) % (self.num_samples // 10) == 0:
+            if (i + 1) % (self.num_samples // 5) == 0:  # Log setiap 20%
                 current_temps = [param[0] for param in sample_params[:i + 1]]
                 current_counts = Counter(current_temps)
-                print(f"Progres {(i + 1)/self.num_samples*100:.1f}%:")
+                self.logger.info(f"Progres {(i + 1)/self.num_samples*100:.1f}%:")
                 for temp, count in current_counts.items():
-                    print(f"Suhu {temp} K: {count} sampel ({count/(i + 1)*100:.2f}%)")
+                    self.logger.info(f"Suhu {temp} K: {count} sampel ({count/(i + 1)*100:.2f}%)")
 
         if not spectra_list:
-            raise ValueError("Tidak ada sampel valid yang dihasilkan. Periksa data NIST atau konfigurasi simulator.")
+            self.logger.error("Tidak ada sampel valid yang dihasilkan. Periksa data NIST atau konfigurasi simulator")
+            raise ValueError("Tidak ada sampel valid yang dihasilkan")
 
         spectra_array = np.array(spectra_list, dtype=np.float32)
         labels_array = np.array(labels_list, dtype=np.int32)
@@ -559,7 +606,7 @@ class DatasetGenerator:
         if os.path.exists(drive_output_path):
             backup_path = os.path.join(drive_processed_dir, f"spectral_dataset_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.h5")
             shutil.copy(drive_output_path, backup_path)
-            print(f"Backup dibuat di {backup_path}")
+            self.logger.info(f"Backup dibuat di {backup_path}")
 
         existing_data = {'train': {'spectra': [], 'labels': [], 'atom_percentages': []},
                         'validation': {'spectra': [], 'labels': [], 'atom_percentages': []},
@@ -571,7 +618,8 @@ class DatasetGenerator:
                 if 'wavelengths' in f:
                     existing_wavelengths = f['wavelengths'][:]
                     if not np.array_equal(existing_wavelengths, wavelengths_array):
-                        raise ValueError("Wavelengths baru tidak cocok dengan wavelengths yang sudah ada")
+                        self.logger.error("Wavelengths baru tidak cocok dengan wavelengths yang sudah ada")
+                        raise ValueError("Wavelengths tidak cocok")
 
                 for ds_name in ['train', 'validation', 'test']:
                     if ds_name in f:
@@ -618,20 +666,21 @@ class DatasetGenerator:
             f.attrs['total_samples'] = total_samples
             f.attrs['simulation_config'] = json.dumps(self.config)
 
-        print(f"Dataset di-append ke {drive_output_path} di sub-grup train/validation/test")
-        print(f"Total sampel: {total_samples} (baru: {len(spectra_list)}, lama: {total_existing_samples})")
+        self.logger.info(f"Dataset di-append ke {drive_output_path} di sub-grup train/validation/test")
+        self.logger.info(f"Total sampel: {total_samples} (baru: {len(spectra_list)}, lama: {total_existing_samples})")
 
 class DataManager:
     """Mengelola pemuatan data, validasi, dan operasi file."""
     def __init__(self, base_dir: str):
         self.base_dir = base_dir
-        self.data_dir = os.path.join(base_dir, "data/raw/HDF5")
-        self.processed_dir = os.path.join(base_dir, "data/processed")
+        self.data_dir = os.path.join(base_dir, "data/src")
+        self.processed_dir = os.path.join(base_dir, "data/out")
         self.nist_source_path = os.path.join(self.data_dir, "nist_data(1).h5")
         self.nist_target_path = os.path.join(self.processed_dir, "nist_data(1).h5")
         self.atomic_data_source_path = os.path.join(self.data_dir, "atomic_data1.h5")
         self.atomic_data_target_path = os.path.join(self.processed_dir, "atomic_data1.h5")
         self.json_map_path = os.path.join(self.processed_dir, "element_map.json")
+        self.logger = logging.getLogger('SpectralSimulation')
 
     def copy_files(self) -> None:
         """Pastikan file data tersedia di direktori kerja."""
@@ -639,19 +688,24 @@ class DataManager:
                                   (self.atomic_data_source_path, self.atomic_data_target_path)],
                                  desc="Menyalin file"):
             if not os.path.exists(source):
+                self.logger.error(f"File tidak ditemukan di {source}")
                 raise FileNotFoundError(f"File tidak ditemukan di {source}")
             if not os.path.exists(target):
                 shutil.copy(source, target)
+                self.logger.info(f"Menyalin {source} ke {target}")
 
     def load_element_map(self) -> Dict:
         if not os.path.exists(self.json_map_path):
-            raise FileNotFoundError(f"element_map.json tidak ditemukan di {self.json_map_path}")
+            self.logger.error(f"element_map.json tidak ditemukan di {self.json_map_path}")
+            raise FileNotFoundError(f"element_map.json tidak ditemukan")
         with open(self.json_map_path, 'r') as f:
             element_map = json.load(f)
 
         for elem in REQUIRED_ELEMENTS:
             if elem not in element_map or not isinstance(element_map[elem], list) or abs(sum(element_map[elem]) - 1.0) > 1e-6:
-                raise ValueError(f"Peta elemen tidak valid untuk {elem}: harus berupa daftar dengan jumlah 1.0")
+                self.logger.error(f"Peta elemen tidak valid untuk {elem}: harus berupa daftar dengan jumlah 1.0")
+                raise ValueError(f"Peta elemen tidak valid untuk {elem}")
+        self.logger.info(f"Element map dimuat dengan {len(element_map)} elemen")
         return element_map
 
     def load_ionization_energies(self) -> Dict[str, float]:
@@ -673,17 +727,18 @@ class DataManager:
                         ion_energy_col = col
 
                 if not species_col or not ion_energy_col:
-                    raise KeyError(f"Kolom yang diperlukan tidak ditemukan. Tersedia: {list(df_ionization.columns)}")
+                    self.logger.error(f"Kolom yang diperlukan tidak ditemukan. Tersedia: {list(df_ionization.columns)}")
+                    raise KeyError(f"Kolom yang diperlukan tidak ditemukan")
 
                 for _, row in df_ionization.iterrows():
                     try:
                         ionization_energies[row[species_col]] = float(row[ion_energy_col])
                     except (ValueError, TypeError):
-                        print(f"Peringatan: Energi ionisasi tidak valid untuk {row[species_col]}, menggunakan 0.0 eV")
+                        self.logger.warning(f"Energi ionisasi tidak valid untuk {row[species_col]}, menggunakan 0.0 eV")
                         ionization_energies[row[species_col]] = 0.0
 
         except Exception as e:
-            print(f"Error memuat atomic_data1.h5: {str(e)}")
+            self.logger.error(f"Error memuat atomic_data1.h5: {str(e)}")
             raise
 
         for elem in REQUIRED_ELEMENTS:
@@ -691,17 +746,22 @@ class DataManager:
             ion_level = 'I' if ion == '1' else 'II'
             sp_name = f"{base_elem} {ion_level}"
             if sp_name not in ionization_energies:
-                print(f"Peringatan: Tidak ada energi ionisasi untuk {sp_name}, menggunakan 0.0 eV")
+                self.logger.warning(f"Tidak ada energi ionisasi untuk {sp_name}, menggunakan 0.0 eV")
                 ionization_energies[sp_name] = 0.0
 
         return ionization_energies
 
 def main():
     """Fungsi utama untuk menjalankan simulasi dan menghasilkan dataset."""
-    pd.set_option('future.no_silent_downcasting', True)
-    torch.set_num_threads(16)  # Sesuaikan dengan jumlah core CPU HPC
+    logger = setup_logging(base_dir="/home/bwalidain/data", job_id=os.getenv("SLURM_JOB_ID", "unknown"))
+    logger.info("Memulai simulasi spektral")
+    if not ipex:
+        logger.warning("Intel Extension for PyTorch tidak tersedia. Lanjutkan tanpa optimasi IPEX")
 
-    base_dir = "/home/bwalidain/data"  # Direktori di HPC BRIN
+    pd.set_option('future.no_silent_downcasting', True)
+    torch.set_num_threads(16)
+
+    base_dir = "/home/bwalidain/data"
     data_manager = DataManager(base_dir)
 
     # Salin file data ke direktori processed
@@ -721,7 +781,7 @@ def main():
         nist_data_dict[elem] = data
         delta_E_max_dict[elem] = delta_E
         if not data:
-            print(f"Tidak ada data NIST untuk {elem}")
+            logger.warning(f"Tidak ada data NIST untuk {elem}")
 
     # Buat simulator
     simulators = []
@@ -740,7 +800,8 @@ def main():
             simulators.append(simulator)
 
     if not simulators:
-        raise ValueError("Tidak ada simulator valid yang dibuat. Periksa data NIST.")
+        logger.error("Tidak ada simulator valid yang dibuat. Periksa data NIST")
+        raise ValueError("Tidak ada simulator valid yang dibuat")
 
     # Hasilkan dataset
     generator = DatasetGenerator(SIMULATION_CONFIG)
@@ -749,8 +810,10 @@ def main():
         delta_E_max_dict,
         ionization_energies,
         data_manager.processed_dir,
-        data_manager.processed_dir  # Gunakan direktori processed lokal
+        data_manager.processed_dir
     )
+
+    logger.info("Simulasi selesai")
 
 if __name__ == "__main__":
     main()
