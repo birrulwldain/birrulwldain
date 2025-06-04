@@ -500,12 +500,11 @@ class DatasetGenerator:
         simulators: List[SpectrumSimulator],
         delta_E_max: Dict[str, float],
         ionization_energies: Dict[str, float],
-        processed_dir: str,
-        drive_processed_dir: str
+        processed_dir: str
     ) -> None:
         self.logger.info("Memulai pembuatan dataset")
         np.random.seed(42)
-        self.combinations_json_path = os.path.join(drive_processed_dir, "combinations.json")
+        self.combinations_json_path = os.path.join(processed_dir, "combinations.json")
         self._load_used_combinations()
         mixed_simulator = MixedSpectrumSimulator(simulators, self.config, delta_E_max)
         spectra_list, labels_list, wavelengths_list, atom_percentages_list = [], [], [], []
@@ -600,12 +599,12 @@ class DatasetGenerator:
         )
 
         output_filename = "spectral_dataset.h5"
-        drive_output_path = os.path.join(drive_processed_dir, output_filename)
-        os.makedirs(drive_processed_dir, exist_ok=True)
+        output_path = os.path.join(processed_dir, output_filename)
+        os.makedirs(processed_dir, exist_ok=True)
 
-        if os.path.exists(drive_output_path):
-            backup_path = os.path.join(drive_processed_dir, f"spectral_dataset_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.h5")
-            shutil.copy(drive_output_path, backup_path)
+        if os.path.exists(output_path):
+            backup_path = os.path.join(processed_dir, f"spectral_dataset_backup_{datetime.now().strftime('%Y%m%d_%H%M%S')}.h5")
+            shutil.copy(output_path, backup_path)
             self.logger.info(f"Backup dibuat di {backup_path}")
 
         existing_data = {'train': {'spectra': [], 'labels': [], 'atom_percentages': []},
@@ -613,8 +612,8 @@ class DatasetGenerator:
                         'test': {'spectra': [], 'labels': [], 'atom_percentages': []}}
         total_existing_samples = 0
 
-        if os.path.exists(drive_output_path):
-            with h5py.File(drive_output_path, 'r') as f:
+        if os.path.exists(output_path):
+            with h5py.File(output_path, 'r') as f:
                 if 'wavelengths' in f:
                     existing_wavelengths = f['wavelengths'][:]
                     if not np.array_equal(existing_wavelengths, wavelengths_array):
@@ -645,7 +644,7 @@ class DatasetGenerator:
 
             combined_data[ds_name] = (combined_spectra, combined_labels, combined_atom_percentages)
 
-        with h5py.File(drive_output_path, 'a') as f:
+        with h5py.File(output_path, 'a') as f:
             for ds_name in ['train', 'validation', 'test']:
                 if ds_name in f:
                     del f[ds_name]
@@ -662,37 +661,23 @@ class DatasetGenerator:
                 ds_grp.create_dataset('atom_percentages', data=atom_percentages, compression='gzip')
                 total_samples += len(spectra)
 
-            f.attrs['last_updated'] = datetime.now().isoformat()
+            f.attrs['lastbud'] = datetime.now().isoformat()
             f.attrs['total_samples'] = total_samples
             f.attrs['simulation_config'] = json.dumps(self.config)
 
-        self.logger.info(f"Dataset di-append ke {drive_output_path} di sub-grup train/validation/test")
+        self.logger.info(f"Dataset di-append ke {output_path} di sub-grup train/validation/test")
         self.logger.info(f"Total sampel: {total_samples} (baru: {len(spectra_list)}, lama: {total_existing_samples})")
 
 class DataManager:
     """Mengelola pemuatan data, validasi, dan operasi file."""
     def __init__(self, base_dir: str):
         self.base_dir = base_dir
-        self.data_dir = os.path.join(base_dir, "data/src")
-        self.processed_dir = os.path.join(base_dir, "data/out")
-        self.nist_source_path = os.path.join(self.data_dir, "nist_data(1).h5")
-        self.nist_target_path = os.path.join(self.processed_dir, "nist_data(1).h5")
-        self.atomic_data_source_path = os.path.join(self.data_dir, "atomic_data1.h5")
-        self.atomic_data_target_path = os.path.join(self.processed_dir, "atomic_data1.h5")
-        self.json_map_path = os.path.join(self.processed_dir, "element_map.json")
+        self.data_dir = os.path.join(base_dir, "data")
+        self.processed_dir = os.path.join(base_dir, "output")
+        self.nist_target_path = os.path.join(self.data_dir, "nist_data(1).h5")
+        self.atomic_data_target_path = os.path.join(self.data_dir, "atomic_data1.h5")
+        self.json_map_path = os.path.join(self.data_dir, "element_map.json")
         self.logger = logging.getLogger('SpectralSimulation')
-
-    def copy_files(self) -> None:
-        """Pastikan file data tersedia di direktori kerja."""
-        for source, target in tqdm([(self.nist_source_path, self.nist_target_path),
-                                  (self.atomic_data_source_path, self.atomic_data_target_path)],
-                                 desc="Menyalin file"):
-            if not os.path.exists(source):
-                self.logger.error(f"File tidak ditemukan di {source}")
-                raise FileNotFoundError(f"File tidak ditemukan di {source}")
-            if not os.path.exists(target):
-                shutil.copy(source, target)
-                self.logger.info(f"Menyalin {source} ke {target}")
 
     def load_element_map(self) -> Dict:
         if not os.path.exists(self.json_map_path):
@@ -753,7 +738,7 @@ class DataManager:
 
 def main():
     """Fungsi utama untuk menjalankan simulasi dan menghasilkan dataset."""
-    logger = setup_logging(base_dir="/home/bwalidain/data", job_id=os.getenv("SLURM_JOB_ID", "unknown"))
+    logger = setup_logging(base_dir="/home/bwalidain/birrulwldain", job_id=os.getenv("SLURM_JOB_ID", "unknown"))
     logger.info("Memulai simulasi spektral")
     if not ipex:
         logger.warning("Intel Extension for PyTorch tidak tersedia. Lanjutkan tanpa optimasi IPEX")
@@ -761,11 +746,8 @@ def main():
     pd.set_option('future.no_silent_downcasting', True)
     torch.set_num_threads(16)
 
-    base_dir = "/home/bwalidain/data"
+    base_dir = "/home/bwalidain/birrulwldain"
     data_manager = DataManager(base_dir)
-
-    # Salin file data ke direktori processed
-    data_manager.copy_files()
 
     # Muat peta elemen dan energi ionisasi
     element_map = data_manager.load_element_map()
@@ -809,7 +791,6 @@ def main():
         simulators,
         delta_E_max_dict,
         ionization_energies,
-        data_manager.processed_dir,
         data_manager.processed_dir
     )
 
