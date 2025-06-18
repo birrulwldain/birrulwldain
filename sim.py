@@ -13,12 +13,7 @@ from typing import List, Dict, Tuple, Optional
 from collections import Counter
 import hashlib
 from datetime import datetime
-import logging  
-import torch
-
-from typing import List, Dict, Tuple, Optional
-
-import logging # Modul logging untuk HPC
+import logging  # Modul logging untuk HPC
 try:
     import intel_extension_for_pytorch as ipex  # Optimasi untuk CPU Intel
 except ImportError:
@@ -174,7 +169,7 @@ class SpectrumSimulator:
             x_tensor = torch.tensor(self.wavelengths, device=self.device, dtype=torch.float32)
             center_tensor = torch.tensor(center, device=self.device, dtype=torch.float32)
             sigma_tensor = torch.tensor(self.sigma, device=self.device, dtype=torch.float32)
-            with torch.amp.autocast('cpu', dtype=torch.float32):  # Perbarui API dan paksa Float32
+            with torch.cpu.amp.autocast():
                 gaussian = torch.exp(-0.5 * ((x_tensor - center_tensor) / sigma_tensor) ** 2) / (sigma_tensor * torch.sqrt(torch.tensor(2 * np.pi)))
             self.gaussian_cache[center] = gaussian.cpu().numpy().astype(np.float32)
         return self.gaussian_cache[center]
@@ -231,7 +226,7 @@ class SpectrumSimulator:
                             start_idx = max(0, idx - len(gaussian_contribution) // 2)
                             end_idx = min(self.resolution, start_idx + len(gaussian_contribution))
                             if start_idx < end_idx:
-                                with torch.amp.autocast('cpu', dtype=torch.float32):  # Perbarui API dan paksa Float32
+                                with torch.cpu.amp.autocast():
                                     intensities[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
                                     element_contributions[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
                             temp_intensity_data.append({
@@ -276,7 +271,7 @@ class MixedSpectrumSimulator:
         max_intensity = torch.max(torch.abs(intensity_tensor))
         if max_intensity == 0:
             return intensity
-        with torch.amp.autocast('cpu', dtype=torch.float32):  # Perbarui API dan paksa Float32
+        with torch.cpu.amp.autocast():
             return (intensity_tensor / max_intensity * target_max).cpu().numpy()
 
     def _convolve_spectrum(self, spectrum: np.ndarray, sigma_nm: float) -> np.ndarray:
@@ -287,12 +282,12 @@ class MixedSpectrumSimulator:
         kernel = torch.tensor(
             gaussian(kernel_size, sigma_points) / np.sum(gaussian(kernel_size, sigma_points)),
             device=self.device,
-            dtype=torch.float32  # Pastikan kernel Float32
+            dtype=torch.float32
         )
         kernel = kernel.unsqueeze(0).unsqueeze(0)
         spectrum_tensor = spectrum_tensor.unsqueeze(0).unsqueeze(0)
-        # Nonaktifkan autocast untuk F.conv1d agar tetap Float32
-        convolved = F.conv1d(spectrum_tensor, kernel, padding=kernel_size // 2).squeeze().cpu().numpy()
+        with torch.cpu.amp.autocast():
+            convolved = F.conv1d(spectrum_tensor, kernel, padding=kernel_size // 2).squeeze().cpu().numpy()
         return convolved.astype(np.float32)
 
     def _saha_ratio(self, ion_energy: float, temp: float, electron_density: float) -> float:

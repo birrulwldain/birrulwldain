@@ -1,0 +1,368 @@
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{geometry}
+\geometry{margin=1cm} % Margin lebih kecil untuk memaksimalkan ruang plot
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{caption}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage{tocloft}
+\usepackage{float}
+
+\title{Spectral Simulation Report}
+\author{Automated Analysis}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\clearpage
+
+
+
+
+\section{Sample: 1286}
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Simulation Parameters}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Parameter} & \textbf{Value} \\
+            \midrule
+            Temperature ($T$) & \SI{6313}{\kelvin} \\
+            Electron Density ($n_e$) & \SI{2.36e+15}{\per\cubic\centi\meter} \\
+            Total Pixels & \num{4096} \\
+            Signal-to-Noise Ratio (SNR) & \num{35.70} \\
+            \bottomrule
+        \end{tabular}
+        \caption{Simulation parameters and additional metrics for sample 1286.}
+        \label{tab:params_1286}
+    \end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Composition Analysis}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Element} & \textbf{Initial Composition (\%)} & \textbf{Actual Positions} \\
+            \midrule
+            Al & 0.29 & 132.0 \\
+            Ar & 5.24 & 377.0 \\
+            C & 12.98 & 207.0 \\
+            Ca & 3.17 & 150.0 \\
+            Cl & 3.71 & 12.0 \\
+            Co & 12.05 & 983.0 \\
+            Cr & 7.04 & 397.0 \\
+            Fe & 11.85 & 2301.0 \\
+            Mg & 10.75 & 190.0 \\
+            Mn & 0.54 & 642.0 \\
+            N & 2.25 & 396.0 \\
+            Na & 9.24 & 326.0 \\
+            Ni & 1.22 & 478.0 \\
+            O & 1.46 & 10.0 \\
+            S & 10.78 & 25.0 \\
+            Si & 0.77 & 182.0 \\
+            Ti & 6.67 & 1181.0 \\
+            background & N/A & 797.0 \\
+
+            \midrule
+            \textbf{Total Positions} & & 8786.0 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Composition analysis for sample 1286.}
+        \label{tab:comp_1286}
+    \end{table}
+\end{minipage}
+\subsection{Spectral Plot}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth,angle=0]{/Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1286.png}
+    \caption{Spectral simulation plot for sample 1286 with multi-label encoding and detailed composition analysis.}
+    \label{fig:spectrum_1286}
+    \addcontentsline{toc}{subsection}{Spectral Plot for Sample 1286}
+\end{figure}
+\clearpage
+
+\section{Sample: 507}
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Simulation Parameters}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Parameter} & \textbf{Value} \\
+            \midrule
+            Temperature ($T$) & \SI{6818}{\kelvin} \\
+            Electron Density ($n_e$) & \SI{2.60e+15}{\per\cubic\centi\meter} \\
+            Total Pixels & \num{4096} \\
+            Signal-to-Noise Ratio (SNR) & \num{39.85} \\
+            \bottomrule
+        \end{tabular}
+        \caption{Simulation parameters and additional metrics for sample 507.}
+        \label{tab:params_507}
+    \end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Composition Analysis}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Element} & \textbf{Initial Composition (\%)} & \textbf{Actual Positions} \\
+            \midrule
+            Al & 11.76 & 202.0 \\
+            Ar & 13.81 & 592.0 \\
+            C & 0.00 & 0.0 \\
+            Ca & 5.30 & 150.0 \\
+            Cl & 10.16 & 12.0 \\
+            Co & 0.00 & 0.0 \\
+            Cr & 13.05 & 397.0 \\
+            Fe & 0.00 & 0.0 \\
+            Mg & 1.09 & 186.0 \\
+            Mn & 7.87 & 696.0 \\
+            N & 0.00 & 0.0 \\
+            Na & 7.21 & 325.0 \\
+            Ni & 12.23 & 478.0 \\
+            O & 9.95 & 66.0 \\
+            S & 4.89 & 25.0 \\
+            Si & 2.68 & 206.0 \\
+            Ti & 0.00 & 0.0 \\
+            background & N/A & 1900.0 \\
+
+            \midrule
+            \textbf{Total Positions} & & 5235.0 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Composition analysis for sample 507.}
+        \label{tab:comp_507}
+    \end{table}
+\end{minipage}
+\subsection{Spectral Plot}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth,angle=0]{/Volumes/Data/birrulwldain/spectral_report_v12/spectrum_507.png}
+    \caption{Spectral simulation plot for sample 507 with multi-label encoding and detailed composition analysis.}
+    \label{fig:spectrum_507}
+    \addcontentsline{toc}{subsection}{Spectral Plot for Sample 507}
+\end{figure}
+\clearpage
+
+\section{Sample: 16160}
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Simulation Parameters}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Parameter} & \textbf{Value} \\
+            \midrule
+            Temperature ($T$) & \SI{14899}{\kelvin} \\
+            Electron Density ($n_e$) & \SI{1.00e+18}{\per\cubic\centi\meter} \\
+            Total Pixels & \num{4096} \\
+            Signal-to-Noise Ratio (SNR) & \num{42.44} \\
+            \bottomrule
+        \end{tabular}
+        \caption{Simulation parameters and additional metrics for sample 16160.}
+        \label{tab:params_16160}
+    \end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Composition Analysis}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Element} & \textbf{Initial Composition (\%)} & \textbf{Actual Positions} \\
+            \midrule
+            Al & 15.82 & 462.0 \\
+            Ar & 0.00 & 0.0 \\
+            C & 0.00 & 0.0 \\
+            Ca & 21.44 & 150.0 \\
+            Cl & 14.66 & 35.0 \\
+            Co & 0.00 & 0.0 \\
+            Cr & 7.40 & 397.0 \\
+            Fe & 0.00 & 0.0 \\
+            Mg & 6.67 & 358.0 \\
+            Mn & 3.85 & 706.0 \\
+            N & 0.00 & 0.0 \\
+            Na & 2.27 & 330.0 \\
+            Ni & 18.67 & 478.0 \\
+            O & 0.00 & 0.0 \\
+            S & 1.65 & 228.0 \\
+            Si & 7.59 & 223.0 \\
+            Ti & 0.00 & 0.0 \\
+            background & N/A & 1837.0 \\
+
+            \midrule
+            \textbf{Total Positions} & & 5204.0 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Composition analysis for sample 16160.}
+        \label{tab:comp_16160}
+    \end{table}
+\end{minipage}
+\subsection{Spectral Plot}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth,angle=0]{/Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16160.png}
+    \caption{Spectral simulation plot for sample 16160 with multi-label encoding and detailed composition analysis.}
+    \label{fig:spectrum_16160}
+    \addcontentsline{toc}{subsection}{Spectral Plot for Sample 16160}
+\end{figure}
+\clearpage
+
+\section{Sample: 12253}
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Simulation Parameters}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Parameter} & \textbf{Value} \\
+            \midrule
+            Temperature ($T$) & \SI{11162}{\kelvin} \\
+            Electron Density ($n_e$) & \SI{1.00e+14}{\per\cubic\centi\meter} \\
+            Total Pixels & \num{4096} \\
+            Signal-to-Noise Ratio (SNR) & \num{41.84} \\
+            \bottomrule
+        \end{tabular}
+        \caption{Simulation parameters and additional metrics for sample 12253.}
+        \label{tab:params_12253}
+    \end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Composition Analysis}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Element} & \textbf{Initial Composition (\%)} & \textbf{Actual Positions} \\
+            \midrule
+            Al & 1.95 & 459.0 \\
+            Ar & 8.30 & 727.0 \\
+            C & 2.85 & 322.0 \\
+            Ca & 3.82 & 150.0 \\
+            Cl & 5.67 & 35.0 \\
+            Co & 1.89 & 1402.0 \\
+            Cr & 9.94 & 397.0 \\
+            Fe & 0.00 & 0.0 \\
+            Mg & 9.33 & 350.0 \\
+            Mn & 8.76 & 705.0 \\
+            N & 10.48 & 528.0 \\
+            Na & 4.06 & 316.0 \\
+            Ni & 1.39 & 466.0 \\
+            O & 5.63 & 167.0 \\
+            S & 8.53 & 225.0 \\
+            Si & 10.08 & 223.0 \\
+            Ti & 7.33 & 1188.0 \\
+            background & N/A & 713.0 \\
+
+            \midrule
+            \textbf{Total Positions} & & 8373.0 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Composition analysis for sample 12253.}
+        \label{tab:comp_12253}
+    \end{table}
+\end{minipage}
+\subsection{Spectral Plot}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth,angle=0]{/Volumes/Data/birrulwldain/spectral_report_v12/spectrum_12253.png}
+    \caption{Spectral simulation plot for sample 12253 with multi-label encoding and detailed composition analysis.}
+    \label{fig:spectrum_12253}
+    \addcontentsline{toc}{subsection}{Spectral Plot for Sample 12253}
+\end{figure}
+\clearpage
+
+\section{Sample: 3019}
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Simulation Parameters}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            \textbf{Parameter} & \textbf{Value} \\
+            \midrule
+            Temperature ($T$) & \SI{6313}{\kelvin} \\
+            Electron Density ($n_e$) & \SI{5.59e+16}{\per\cubic\centi\meter} \\
+            Total Pixels & \num{4096} \\
+            Signal-to-Noise Ratio (SNR) & \num{36.09} \\
+            \bottomrule
+        \end{tabular}
+        \caption{Simulation parameters and additional metrics for sample 3019.}
+        \label{tab:params_3019}
+    \end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \subsection{Composition Analysis}
+    \centering
+    \begin{table}[H]
+        \centering
+        \small
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Element} & \textbf{Initial Composition (\%)} & \textbf{Actual Positions} \\
+            \midrule
+            Al & 7.74 & 153.0 \\
+            Ar & 5.49 & 266.0 \\
+            C & 5.22 & 187.0 \\
+            Ca & 7.97 & 150.0 \\
+            Cl & 6.70 & 12.0 \\
+            Co & 8.25 & 850.0 \\
+            Cr & 1.44 & 397.0 \\
+            Fe & 2.40 & 2132.0 \\
+            Mg & 6.91 & 163.0 \\
+            Mn & 7.83 & 646.0 \\
+            N & 6.19 & 396.0 \\
+            Na & 3.75 & 330.0 \\
+            Ni & 1.16 & 478.0 \\
+            O & 1.27 & 10.0 \\
+            S & 9.98 & 25.0 \\
+            Si & 9.33 & 176.0 \\
+            Ti & 8.37 & 1181.0 \\
+            background & N/A & 908.0 \\
+
+            \midrule
+            \textbf{Total Positions} & & 8460.0 \\
+            \bottomrule
+        \end{tabular}
+        \caption{Composition analysis for sample 3019.}
+        \label{tab:comp_3019}
+    \end{table}
+\end{minipage}
+\subsection{Spectral Plot}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth,angle=0]{/Volumes/Data/birrulwldain/spectral_report_v12/spectrum_3019.png}
+    \caption{Spectral simulation plot for sample 3019 with multi-label encoding and detailed composition analysis.}
+    \label{fig:spectrum_3019}
+    \addcontentsline{toc}{subsection}{Spectral Plot for Sample 3019}
+\end{figure}
+\clearpage
+
+\end{document}

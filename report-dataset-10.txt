@@ -1,0 +1,76 @@
+Dataset Distribution Report (Generated: 2025-06-17T23:14:21.184611)
+Dataset Path: /home/bwalidain/birrulwldain/dataset-10.h5
+Element Map Path: /home/bwalidain/birrulwldain/element-map-18a.json
+
+--- Distribusi untuk SPLIT: 'train' ---
+Total Sampel yang Diperiksa: 6,991
+Total Posisi Label: 28,635,136
+
+Class Distribution:
+  Al: 2,032,552 positions (7.0981%)
+  Ar: 2,805,915 positions (9.7989%)
+  C: 1,673,255 positions (5.8434%)
+  Ca: 1,048,269 positions (3.6608%)
+  Cl: 179,413 positions (0.6265%)
+  Co: 4,066,907 positions (14.2025%)
+  Cr: 2,775,159 positions (9.6914%)
+  Fe: 5,891,473 positions (20.5743%)
+  Mg: 2,034,060 positions (7.1034%)
+  Mn: 4,610,854 positions (16.1021%)
+  N: 1,953,440 positions (6.8218%)
+  Na: 2,274,539 positions (7.9432%)
+  Ni: 3,333,906 positions (11.6427%)
+  O: 962,275 positions (3.3605%)
+  S: 1,100,627 positions (3.8436%)
+  Si: 1,463,167 positions (5.1097%)
+  Ti: 4,891,987 positions (17.0839%)
+  background: 8,075,384 positions (28.2010%)
+
+--- Distribusi untuk SPLIT: 'validation' ---
+Total Sampel yang Diperiksa: 1,494
+Total Posisi Label: 6,119,424
+
+Class Distribution:
+  Al: 438,207 positions (7.1609%)
+  Ar: 603,158 positions (9.8565%)
+  C: 357,050 positions (5.8347%)
+  Ca: 223,990 positions (3.6603%)
+  Cl: 38,553 positions (0.6300%)
+  Co: 891,777 positions (14.5729%)
+  Cr: 593,088 positions (9.6919%)
+  Fe: 1,248,256 positions (20.3983%)
+  Mg: 429,357 positions (7.0163%)
+  Mn: 980,704 positions (16.0261%)
+  N: 428,035 positions (6.9947%)
+  Na: 485,933 positions (7.9408%)
+  Ni: 712,262 positions (11.6394%)
+  O: 205,130 positions (3.3521%)
+  S: 235,959 positions (3.8559%)
+  Si: 313,122 positions (5.1169%)
+  Ti: 1,045,223 positions (17.0804%)
+  background: 1,713,875 positions (28.0071%)
+
+--- Distribusi untuk SPLIT: 'test' ---
+Total Sampel yang Diperiksa: 1,515
+Total Posisi Label: 6,205,440
+
+Class Distribution:
+  Al: 436,732 positions (7.0379%)
+  Ar: 588,995 positions (9.4916%)
+  C: 342,856 positions (5.5251%)
+  Ca: 227,179 positions (3.6610%)
+  Cl: 38,570 positions (0.6216%)
+  Co: 881,313 positions (14.2023%)
+  Cr: 601,378 positions (9.6911%)
+  Fe: 1,345,735 positions (21.6864%)
+  Mg: 439,844 positions (7.0880%)
+  Mn: 1,005,347 positions (16.2011%)
+  N: 449,990 positions (7.2515%)
+  Na: 492,753 positions (7.9407%)
+  Ni: 722,268 positions (11.6393%)
+  O: 208,257 positions (3.3560%)
+  S: 234,805 positions (3.7839%)
+  Si: 317,117 positions (5.1103%)
+  Ti: 1,043,455 positions (16.8152%)
+  background: 1,734,044 positions (27.9439%)
+

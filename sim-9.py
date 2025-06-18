@@ -1,9 +1,30 @@
+# >>> Kode diagnostik di awal sim2.py <<<
+import sys
 import os
-import numpy as np
-import pandas as pd
 import json
 import re
-import torch
+
+print("--- DIAGNOSTIK AWAL SKRIP ---")
+print(f"Versi Python yang digunakan skrip: {sys.version}")
+print(f"Executable Python yang digunakan: {sys.executable}")
+print(f"PYTHONPATH saat ini: {os.environ.get('PYTHONPATH', 'Tidak diatur')}")
+print(f"Path pencarian modul sys.path:")
+for p_idx, p_val in enumerate(sys.path):
+    print(f"  [{p_idx}] - {p_val}")
+
+try:
+    print("Mencoba mengimpor IPEX di dalam skrip (awal)...")
+    import intel_extension_for_pytorch as ipex_diag
+    print(f"IPEX berhasil diimpor di skrip (awal)! Versi: {ipex_diag.__version__}")
+except ImportError as e:
+    print(f"IPEX GAGAL diimpor di dalam skrip (awal). Error: {e}")
+except Exception as e:
+    print(f"Error lain saat mencoba impor IPEX di skrip (awal): {e}")
+print("--- AKHIR DIAGNOSTIK AWAL SKRIP ---")
+print("\nMelanjutkan eksekusi skrip asli...\n")
+import numpy as np
+import pandas as pd
+import torch 
 import torch.nn.functional as F
 from scipy.signal.windows import gaussian
 import h5py
@@ -13,17 +34,16 @@ from typing import List, Dict, Tuple, Optional
 from collections import Counter
 import hashlib
 from datetime import datetime
-import logging  
-import torch
+import logging
+from multiprocessing import Pool
 
-from typing import List, Dict, Tuple, Optional
-
-import logging # Modul logging untuk HPC
+# Impor IPEX dengan logging versi
 try:
-    import intel_extension_for_pytorch as ipex  # Optimasi untuk CPU Intel
+    import intel_extension_for_pytorch as ipex
+    ipex_version = getattr(ipex, '__version__', 'unknown')
 except ImportError:
     ipex = None
-    # Tidak mencatat peringatan di sini, ditangani oleh logging
+    ipex_version = 'not installed'
 
 # Konfigurasi logging
 def setup_logging(base_dir: str, job_id: str = "unknown"):
@@ -33,22 +53,18 @@ def setup_logging(base_dir: str, job_id: str = "unknown"):
     log_file = os.path.join(log_dir, f"spectral_simulation_{job_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
     
     logger = logging.getLogger('SpectralSimulation')
-    logger.setLevel(logging.INFO)  # Level default: INFO
+    logger.setLevel(logging.DEBUG)
     
-    # Handler untuk stdout (kompatibel dengan SLURM)
     stdout_handler = logging.StreamHandler()
-    stdout_handler.setLevel(logging.INFO)
+    stdout_handler.setLevel(logging.DEBUG)
     
-    # Handler untuk file
     file_handler = logging.FileHandler(log_file)
-    file_handler.setLevel(logging.INFO)
+    file_handler.setLevel(logging.DEBUG)
     
-    # Format log: [timestamp] [level] pesan
-    formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
+    formatter = logging.Formatter('%(asctime)s [%(levelname)s] [%(processName)s] %(message)s')
     stdout_handler.setFormatter(formatter)
     file_handler.setFormatter(formatter)
     
-    # Hapus handler lama jika ada
     logger.handlers.clear()
     logger.addHandler(stdout_handler)
     logger.addHandler(file_handler)
@@ -62,9 +78,12 @@ SIMULATION_CONFIG = {
     "sigma": 0.1,
     "target_max_intensity": 0.8,
     "convolution_sigma": 0.1,
-    "num_samples": 500,  # Ubah ke 10000 untuk skala besar
-    "temperature_range": [6000, 8000, 10000, 12000, 14000, 15000],
-    "electron_density_range": np.logspace(15, 17, 10).tolist(),
+    "num_samples": 2000,
+    "temperature_range": np.linspace(5000, 25000, 100).tolist(),
+    "electron_density_range": np.logspace(14, 18, 100).tolist(),
+    "data_dir": "/home/bwalidain/birrulwldain/data",
+    "processed_dir": "/home/bwalidain/_scratch/",
+    "logs_dir": "/home/bwalidain/birrulwldain/logs"
 }
 
 # Konstanta fisika
@@ -74,16 +93,21 @@ PHYSICAL_CONSTANTS = {
     "h": 4.135667696e-15,      # eV·s
 }
 
-# Elemen dan ion
-BASE_ELEMENTS = ["Si", "Al", "Fe", "Ca", "O", "Na", "N", "Ni", "Cr", "Cl"]
-REQUIRED_ELEMENTS = [f"{elem}_{ion}" for elem in BASE_ELEMENTS for ion in [1, 2]]
+# Definisi elemen target
+# versi 35
+# BASE_ELEMENTS = ["Si", "Al", "Fe", "Ca", "O", "Na", "N", "Ni", "Cr", "Cl", "Mg", "C", "S", "Ar", "Ti", "Mn", "Co"]
+# REQUIRED_ELEMENTS = [f"{elem}_{i}" for elem in BASE_ELEMENTS for i in [1, 2]]
+
+#versi 9
+BASE_ELEMENTS = ["Al", "Fe", "Ca", "Mg"]
+REQUIRED_ELEMENTS = [f"{elem}_{i}" for elem in BASE_ELEMENTS for i in [1, 2]]
 
 class DataFetcher:
     """Mengambil data spektral dari file HDF5 NIST untuk elemen dan ion tertentu."""
     def __init__(self, hdf_path: str):
         self.hdf_path = hdf_path
         self.delta_E_max: Dict[str, float] = {}
-        self.missing_data_count: Dict[str, int] = {}  # Batasi peringatan berulang
+        self.missing_data_count: Dict[str, int] = {}
         self.logger = logging.getLogger('SpectralSimulation')
 
     def get_nist_data(self, element: str, sp_num: int) -> Tuple[List[List], float]:
@@ -96,7 +120,7 @@ class DataFetcher:
 
                 if filtered_df.empty or not all(col in df.columns for col in required_columns):
                     self.missing_data_count[elem_key] = self.missing_data_count.get(elem_key, 0) + 1
-                    if self.missing_data_count[elem_key] <= 3:  # Batasi hingga 3 peringatan
+                    if self.missing_data_count[elem_key] <= 3:
                         self.logger.warning(f"Tidak ada data untuk {elem_key} di dataset NIST")
                     return [], 0.0
 
@@ -142,7 +166,8 @@ class SpectrumSimulator:
         ion: int,
         temperatures: List[float],
         ionization_energy: float,
-        config: Dict = SIMULATION_CONFIG
+        config: Dict = SIMULATION_CONFIG,
+        element_map_labels: Dict[str, List[float]] = None
     ):
         self.nist_data = nist_data
         self.element = element
@@ -156,10 +181,12 @@ class SpectrumSimulator:
         self.gaussian_cache: Dict[float, np.ndarray] = {}
         self.element_label = f"{element}_{ion}"
         self.device = torch.device("cpu")
+        self.element_map_labels = element_map_labels or {}  # Menyimpan mapping one-hot dari element_map.json
         self.logger = logging.getLogger('SpectralSimulation')
         if ipex:
-            torch.set_num_threads(16)
+            torch.set_num_threads(24)
             self.wavelengths = torch.tensor(self.wavelengths, device=self.device, dtype=torch.float32)
+            self.logger.debug(f"IPEX dimuat, versi: {ipex_version}")
 
     def _partition_function(self, energy_levels: List[float], degeneracies: List[float], temperature: float) -> float:
         k_B = PHYSICAL_CONSTANTS["k_B"]
@@ -171,15 +198,14 @@ class SpectrumSimulator:
 
     def _gaussian_profile(self, center: float) -> np.ndarray:
         if center not in self.gaussian_cache:
-            x_tensor = torch.tensor(self.wavelengths, device=self.device, dtype=torch.float32)
+            x_tensor = self.wavelengths.clone().detach() if isinstance(self.wavelengths, torch.Tensor) else torch.tensor(self.wavelengths, device=self.device, dtype=torch.float32)
             center_tensor = torch.tensor(center, device=self.device, dtype=torch.float32)
             sigma_tensor = torch.tensor(self.sigma, device=self.device, dtype=torch.float32)
-            with torch.amp.autocast('cpu', dtype=torch.float32):  # Perbarui API dan paksa Float32
-                gaussian = torch.exp(-0.5 * ((x_tensor - center_tensor) / sigma_tensor) ** 2) / (sigma_tensor * torch.sqrt(torch.tensor(2 * np.pi)))
+            gaussian = torch.exp(-0.5 * ((x_tensor - center_tensor) / sigma_tensor) ** 2) / (sigma_tensor * torch.sqrt(torch.tensor(2 * np.pi)))
             self.gaussian_cache[center] = gaussian.cpu().numpy().astype(np.float32)
         return self.gaussian_cache[center]
 
-    def simulate(self, atom_percentage: float = 1.0) -> Tuple[np.ndarray, List[np.ndarray], List[List[int]], List[List[int]], List[float], List[List[Dict]], List[np.ndarray]]:
+    def simulate(self, atom_percentage: float = 1.0) -> Tuple[np.ndarray, List[np.ndarray], List[List[int]], List[List[List[float]]], List[float], List[List[Dict]], List[np.ndarray]]:
         if not self.nist_data:
             self.logger.warning(f"Tidak ada data NIST untuk {self.element_label}, melewati simulasi")
             return self.wavelengths, [], [], [], [], [], []
@@ -206,6 +232,8 @@ class SpectrumSimulator:
 
         energy_levels = list(levels.keys())
         degeneracies = list(levels.values())
+        num_labels = len(self.element_map_labels) if self.element_map_labels else 1
+        default_label = [0.0] * num_labels  # Vektor nol untuk label default
 
         for temp in self.temperatures:
             Z = self._partition_function(energy_levels, degeneracies, temp)
@@ -231,18 +259,18 @@ class SpectrumSimulator:
                             start_idx = max(0, idx - len(gaussian_contribution) // 2)
                             end_idx = min(self.resolution, start_idx + len(gaussian_contribution))
                             if start_idx < end_idx:
-                                with torch.amp.autocast('cpu', dtype=torch.float32):  # Perbarui API dan paksa Float32
-                                    intensities[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
-                                    element_contributions[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
+                                intensities[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
+                                element_contributions[start_idx:end_idx] += gaussian_contribution[:end_idx - start_idx]
                             temp_intensity_data.append({
                                 'wavelength': wl,
                                 'intensity': intensity * atom_percentage,
                                 'element_label': self.element_label,
                                 'index': idx
                             })
-                            class_idx = REQUIRED_ELEMENTS.index(self.element_label) if self.element_label in REQUIRED_ELEMENTS else len(REQUIRED_ELEMENTS)
+                            # Gunakan vektor one-hot dari element_map.json
+                            one_hot_label = self.element_map_labels.get(self.element_label, default_label)
                             peak_idx.append(idx)
-                            peak_label.append(class_idx)
+                            peak_label.append(one_hot_label)
                 except (ValueError, TypeError):
                     continue
 
@@ -256,8 +284,7 @@ class SpectrumSimulator:
         return self.wavelengths, spectra, peak_indices, peak_labels, temperatures, intensity_data, contributions
 
 class MixedSpectrumSimulator:
-    """Menggabungkan spektrum dari beberapa elemen berdasarkan proporsi atom."""
-    def __init__(self, simulators: List[SpectrumSimulator], config: Dict, delta_E_max: Dict[str, float]):
+    def __init__(self, simulators: List[SpectrumSimulator], config: Dict, delta_E_max: Dict[str, float], element_map_labels: Dict[str, List[float]]):
         self.simulators = simulators
         self.resolution = config["resolution"]
         self.wl_range = config["wl_range"]
@@ -269,6 +296,8 @@ class MixedSpectrumSimulator:
         self.intensity_threshold = 0.01
         self.current_T: float = 0.0
         self.current_n_e: float = 0.0
+        self.element_map_labels = element_map_labels
+        self.num_labels = len(next(iter(element_map_labels.values())))  # Panjang vektor one-hot (105)
         self.logger = logging.getLogger('SpectralSimulation')
 
     def _normalize_intensity(self, intensity: np.ndarray, target_max: float) -> np.ndarray:
@@ -276,8 +305,7 @@ class MixedSpectrumSimulator:
         max_intensity = torch.max(torch.abs(intensity_tensor))
         if max_intensity == 0:
             return intensity
-        with torch.amp.autocast('cpu', dtype=torch.float32):  # Perbarui API dan paksa Float32
-            return (intensity_tensor / max_intensity * target_max).cpu().numpy()
+        return (intensity_tensor / max_intensity * target_max).cpu().numpy()
 
     def _convolve_spectrum(self, spectrum: np.ndarray, sigma_nm: float) -> np.ndarray:
         spectrum_tensor = torch.tensor(spectrum, dtype=torch.float32, device=self.device)
@@ -287,11 +315,10 @@ class MixedSpectrumSimulator:
         kernel = torch.tensor(
             gaussian(kernel_size, sigma_points) / np.sum(gaussian(kernel_size, sigma_points)),
             device=self.device,
-            dtype=torch.float32  # Pastikan kernel Float32
+            dtype=torch.float32
         )
         kernel = kernel.unsqueeze(0).unsqueeze(0)
         spectrum_tensor = spectrum_tensor.unsqueeze(0).unsqueeze(0)
-        # Nonaktifkan autocast untuk F.conv1d agar tetap Float32
         convolved = F.conv1d(spectrum_tensor, kernel, padding=kernel_size // 2).squeeze().cpu().numpy()
         return convolved.astype(np.float32)
 
@@ -305,16 +332,18 @@ class MixedSpectrumSimulator:
         U_ip1 = 1.0
         saha_factor = (2 * U_ip1 / U_i) * two_pi_me_kT_h2 / electron_density
         return saha_factor * np.exp(-ion_energy / (k_B * temp))
-
     def generate_sample(self, ionization_energies: Dict[str, float]) -> Tuple[Optional[np.ndarray], Optional[np.ndarray], Optional[np.ndarray], Optional[Dict]]:
+        self.logger.debug(f"Memulai generate_sample untuk T={self.current_T} K, n_e={self.current_n_e:.2e}")
         if self.current_n_e > 5e16 and self.current_T < 8000:
             self.logger.warning(f"n_e tinggi ({self.current_n_e:.2e} cm^-3) dan T rendah ({self.current_T} K) dapat menyebabkan self-absorption")
 
         temp = self.current_T
         electron_density = self.current_n_e
-        num_target_elements = 7
+        num_target_elements = np.random.randint(3, 4)
+        self.logger.debug(f"Memilih {num_target_elements} elemen untuk sampel")
         selected_base_elements = np.random.choice(BASE_ELEMENTS, num_target_elements, replace=False)
-        selected_pairs = [(elem, f"{elem}_1", f"{elem}_2") for elem in selected_base_elements]
+        selected_pairs = [(elem, f"{elem}_1", f"{elem}_2") for elem in selected_base_elements if f"{elem}_1" in REQUIRED_ELEMENTS and f"{elem}_2" in REQUIRED_ELEMENTS]
+        self.logger.debug("Selesai memilih elemen target")
 
         delta_E_values = []
         for base_elem, elem_neutral, elem_ion in selected_pairs:
@@ -332,7 +361,7 @@ class MixedSpectrumSimulator:
                 self.logger.warning(f"Tidak ada energi ionisasi untuk {base_elem} I")
                 continue
             saha_ratio = self._saha_ratio(ion_energy, temp, electron_density)
-            total_percentage = np.random.uniform(5, 20)
+            total_percentage = np.random.lognormal(mean=0, sigma=1.5)
             fraction_neutral = 1 / (1 + saha_ratio)
             fraction_ion = saha_ratio / (1 + saha_ratio)
             percentage_neutral = total_percentage * fraction_neutral
@@ -340,12 +369,14 @@ class MixedSpectrumSimulator:
             atom_percentages_dict[elem_neutral] = percentage_neutral / 100.0
             atom_percentages_dict[elem_ion] = percentage_ion / 100.0
             total_target_percentage += total_percentage
+        self.logger.debug("Selesai menghitung proporsi atom")
 
         if total_target_percentage != 0:
             scaling_factor = 100.0 / total_target_percentage
             for key in atom_percentages_dict:
                 atom_percentages_dict[key] *= scaling_factor
         else:
+            self.logger.debug("Total proporsi atom nol, mengembalikan None")
             return None, None, None, None
 
         atom_percentages_dict['temperature'] = float(temp)
@@ -353,12 +384,13 @@ class MixedSpectrumSimulator:
         atom_percentages_dict['delta_E_max'] = float(delta_E_max)
 
         selected_target_elements = [k for k in atom_percentages_dict.keys() if k not in ['temperature', 'electron_density', 'delta_E_max']]
-        atom_percentages = np.array([atom_percentages_dict[elem] for elem in selected_target_elements], dtype=np.float32)
+        atom_percentages = np.array([atom_percentages_dict[e] for e in selected_target_elements], dtype=np.float32)
         selected_simulators = [sim for sim in self.simulators if f"{sim.element}_{sim.ion}" in selected_target_elements]
 
         if not selected_simulators:
             self.logger.warning(f"Tidak ada simulator valid untuk {selected_target_elements}")
             return None, None, None, None
+        self.logger.debug("Selesai memilih simulator")
 
         mixed_spectrum = np.zeros(self.resolution, dtype=np.float32)
         element_contributions = np.zeros((len(selected_simulators), self.resolution), dtype=np.float32)
@@ -372,6 +404,7 @@ class MixedSpectrumSimulator:
                     mixed_spectrum += spectrum
                     element_contributions[sim_idx] = contrib
                     break
+        self.logger.debug("Selesai menghasilkan mixed spectrum")
 
         if np.max(mixed_spectrum) == 0:
             self.logger.warning(f"Tidak ada spektrum dihasilkan untuk T={temp} K")
@@ -379,29 +412,28 @@ class MixedSpectrumSimulator:
 
         convolved_spectrum = self._convolve_spectrum(mixed_spectrum, self.convolution_sigma)
         normalized_spectrum = self._normalize_intensity(convolved_spectrum, SIMULATION_CONFIG["target_max_intensity"])
+        self.logger.debug("Selesai konvolusi dan normalisasi")
 
-        labels = np.zeros(self.resolution, dtype=np.int32)
-        contributions_array = np.zeros((self.resolution, len(REQUIRED_ELEMENTS)), dtype=np.float32)
-
+        # Pelabelan yang diperbaiki
+        labels = np.zeros((self.resolution, self.num_labels), dtype=np.float32)
+        background_label = np.array(self.element_map_labels["background"], dtype=np.float32)  # Gunakan background dari element_map
         for idx in range(self.resolution):
             contributions_at_point = element_contributions[:, idx]
             total_intensity = np.sum(contributions_at_point)
             if total_intensity >= self.intensity_threshold:
                 dominant_sim_idx = np.argmax(contributions_at_point)
                 dominant_element = selected_simulators[dominant_sim_idx].element_label
-                if dominant_element in REQUIRED_ELEMENTS:
-                    dominant_label = REQUIRED_ELEMENTS.index(dominant_element)
-                    labels[idx] = dominant_label + 1
-                    contributions_array[idx, dominant_label] = normalized_spectrum[idx]
+                one_hot_label = np.array(self.element_map_labels.get(dominant_element, background_label), dtype=np.float32)
+            else:
+                one_hot_label = background_label  # Semua posisi di luar atom diberi label background
+            labels[idx] = one_hot_label
 
-        atom_percentages_dict = {
-            k: float(v * 100) if k not in ['temperature', 'electron_density', 'delta_E_max'] else float(v)
-            for k, v in atom_percentages_dict.items()
-        }
+        atom_percentages_dict = {k: float(v * 100) if k not in ['temperature', 'electron_density', 'delta_E_max'] else float(v)
+                                for k, v in atom_percentages_dict.items()}
+        self.logger.debug("Sampel selesai dihasilkan")
         return self.wavelengths, normalized_spectrum, labels, atom_percentages_dict
-
 class DatasetGenerator:
-    """Menghasilkan dan menyimpan dataset spektral dengan distribusi suhu yang seragam."""
+    
     def __init__(self, config: Dict = SIMULATION_CONFIG):
         self.config = config
         self.temperature_range = config["temperature_range"]
@@ -412,7 +444,7 @@ class DatasetGenerator:
         self.logger = logging.getLogger('SpectralSimulation')
 
     def _calculate_lte_electron_density(self, temp: float, delta_E: float) -> float:
-        return 1.6e12 * (temp ** 0.5) * (delta_E ** 3)
+        return 1.638e12 * (temp ** 0.5) * (delta_E ** 3)
 
     def _hash_combination(self, temp: float, n_e: float, atom_percentages: Dict) -> str:
         elements_sorted = sorted(
@@ -420,11 +452,11 @@ class DatasetGenerator:
              if k not in ['temperature', 'electron_density', 'delta_E_max']],
             key=lambda x: x[0]
         )
-        combination_str = f"{temp:.2f}_{n_e:.2e}_{str(elements_sorted)}"
+        combination_str = f"{temp:.5f}_{n_e:.5f}_{str(elements_sorted)}"
         return hashlib.sha256(combination_str.encode()).hexdigest()
 
     def _load_used_combinations(self) -> None:
-        self.used_combinations = set()
+        self.used_combinations.clear()
         if os.path.exists(self.combinations_json_path):
             try:
                 with open(self.combinations_json_path, 'r') as f:
@@ -435,7 +467,7 @@ class DatasetGenerator:
             except Exception as e:
                 self.logger.error(f"Error memuat kombinasi JSON: {str(e)}")
 
-    def _save_combination(self, combination: Dict) -> None:
+    def _save_combinations(self, combinations: List[Dict]) -> None:
         if not self.combinations_json_path:
             return
         try:
@@ -443,7 +475,7 @@ class DatasetGenerator:
             if os.path.exists(self.combinations_json_path):
                 with open(self.combinations_json_path, 'r') as f:
                     data = json.load(f)
-            data.append(combination)
+            data.extend(combinations)
             with open(self.combinations_json_path, 'w') as f:
                 json.dump(data, f, indent=4)
         except Exception as e:
@@ -465,7 +497,7 @@ class DatasetGenerator:
                 self.logger.warning(f"Tidak ada densitas elektron valid untuk T={T} K. Menggunakan seluruh rentang")
                 valid_n_e = self.electron_density_range
 
-            max_ne_per_temp = min(len(valid_n_e), 5)
+            max_ne_per_temp = min(len(valid_n_e), 10)
             if max_ne_per_temp == 0:
                 max_ne_per_temp = len(self.electron_density_range)
             selected_n_e = np.random.choice(valid_n_e, size=max_ne_per_temp, replace=False).tolist()
@@ -500,81 +532,118 @@ class DatasetGenerator:
 
         return sample_params
 
+    def _generate_sample_task(self, args: Tuple[float, float, List[SpectrumSimulator], Dict[str, float], Dict[str, float], int, set]) -> Tuple[Optional[np.ndarray], Optional[np.ndarray], Optional[np.ndarray], Optional[Dict], Optional[Dict]]:
+        T, n_e, simulators, ionization_energies, delta_E_max, sample_id, used_combinations = args
+        logger = logging.getLogger('SpectralSimulation')
+        logger.debug(f"Memulai pemrosesan sampel {sample_id} dengan T={T} K, n_e={n_e:.1e} cm^-3")
+        mixed_simulator = MixedSpectrumSimulator(simulators, self.config, delta_E_max, self.element_map_labels)
+        mixed_simulator.current_T = T
+        mixed_simulator.current_n_e = n_e
+        max_attempts = 50
+        attempt = 0
+        sample_generated = False
+        result = (None, None, None, None, None)
+
+        while attempt < max_attempts and not sample_generated:
+            result = mixed_simulator.generate_sample(ionization_energies)
+            if result[0] is None:
+                attempt += 1
+                logger.debug(f"Percobaan {attempt}/{max_attempts} untuk sampel {sample_id} gagal")
+                continue
+
+            wavelengths, spectrum, labels, atom_percentages = result
+            combination_hash = self._hash_combination(T, n_e, atom_percentages)
+            if combination_hash in used_combinations:
+                logger.debug(f"Kombinasi sudah ada untuk T={T} K, n_e={n_e:.1e} cm^-3, coba ulang ({attempt + 1}/{max_attempts})")
+                attempt += 1
+                continue
+            combination = {
+                'sample_id': f"sample_{sample_id}",
+                'hash': combination_hash,
+                'temperature': float(T),
+                'electron_density': float(n_e),
+                'elements': {k: v for k, v in atom_percentages.items()
+                             if k not in ['temperature', 'electron_density', 'delta_E_max']},
+                'delta_E_max': atom_percentages['delta_E_max']
+            }
+            sample_generated = True
+            result = (wavelengths, spectrum, labels, atom_percentages, combination)
+
+        if not sample_generated:
+            logger.warning(f"Gagal menghasilkan sampel unik untuk T={T} K, n_e={n_e:.1e} cm^-3 setelah {max_attempts} percobaan")
+            T = np.random.choice(self.temperature_range)
+            n_e = np.random.choice(self.electron_density_range)
+            logger.info(f"Falling back ke T={T} K, n_e={n_e:.1e} cm^-3 untuk sample_id={sample_id}")
+            return self._generate_sample_task((T, n_e, simulators, ionization_energies, delta_E_max, sample_id, used_combinations))
+        else:
+            logger.debug(f"Sampel {sample_id} selesai diproses")
+        return result
+
     def generate_dataset(
         self,
         simulators: List[SpectrumSimulator],
         delta_E_max: Dict[str, float],
         ionization_energies: Dict[str, float],
-        processed_dir: str
+        processed_dir: str,
+        element_map_labels: Dict[str, List[float]]
     ) -> None:
+        self.element_map_labels = element_map_labels
         self.logger.info("Memulai pembuatan dataset")
         np.random.seed(42)
-        self.combinations_json_path = os.path.join(processed_dir, "combinations.json")
+        self.combinations_json_path = os.path.join(processed_dir, "combinations-9.json")
         self._load_used_combinations()
-        mixed_simulator = MixedSpectrumSimulator(simulators, self.config, delta_E_max)
-        spectra_list, labels_list, wavelengths_list, atom_percentages_list = [], [], [], []
 
+        spectra_list, labels_list, wavelengths_list, atom_percentages_list = [], [], [], []
         sample_params = self._generate_sample_params(delta_E_max)
 
         temps = [param[0] for param in sample_params]
         temp_counts = Counter(temps)
-        for temp, count in temp_counts.items():
+        for temp in sorted(temp_counts.keys()):
+            count = temp_counts[temp]
             self.logger.info(f"Distribusi suhu - Suhu {temp} K: {count} sampel ({count/self.num_samples*100:.2f}%)")
 
-        for i, (T, n_e) in enumerate(tqdm(sample_params, desc="Menghasilkan dataset")):
-            mixed_simulator.current_T = T
-            mixed_simulator.current_n_e = n_e
-            max_attempts = 5
-            attempt = 0
-            sample_generated = False
+        max_workers = min(24, os.cpu_count() or 1)
+        self.logger.info(f"Menggunakan {max_workers} proses untuk pembuatan dataset")
 
-            while attempt < max_attempts and not sample_generated:
-                result = mixed_simulator.generate_sample(ionization_energies)
-                if result[0] is None:
-                    attempt += 1
-                    continue
+        combinations_to_save = []
+        with Pool(processes=max_workers) as pool:
+            tasks = [(T, n_e, simulators, ionization_energies, delta_E_max, i + 1, self.used_combinations)
+                    for i, (T, n_e) in enumerate(sample_params)]
+            for result in tqdm(pool.imap_unordered(self._generate_sample_task, tasks), total=len(tasks), desc="Menghasilkan dataset"):
+                wavelengths, spectrum, labels, atom_percentages, combination = result
+                if spectrum is not None:
+                    spectra_list.append(spectrum)
+                    labels_list.append(labels)
+                    wavelengths_list.append(wavelengths)
+                    atom_percentages_list.append(atom_percentages)
+                    if combination:
+                        self.used_combinations.add(combination['hash'])
+                        combinations_to_save.append(combination)
+                    if len(spectra_list) % (self.num_samples // 5) == 0:
+                        current_temps = [param[0] for param in sample_params[:len(spectra_list)]]
+                        current_counts = Counter(current_temps)
+                        self.logger.info(f"Progres {len(spectra_list)/self.num_samples*100:.1f}%:")
+                        for temp, count in sorted(current_counts.items()):
+                            self.logger.info(f"Suhu {temp} K: {count} sampel ({count/len(spectra_list)*100:.2f}%)")
+                        self._save_combinations(combinations_to_save)
+                        combinations_to_save = []
 
-                wavelengths, spectrum, labels, atom_percentages = result
-                combination_hash = self._hash_combination(T, n_e, atom_percentages)
-                if combination_hash in self.used_combinations:
-                    self.logger.debug(f"Kombinasi sudah ada untuk T={T} K, n_e={n_e:.2e} cm^-3, coba ulang ({attempt + 1}/{max_attempts})")
-                    attempt += 1
-                    continue
-
-                spectra_list.append(spectrum)
-                labels_list.append(labels)
-                wavelengths_list.append(wavelengths)
-                atom_percentages_list.append(atom_percentages)
-
-                combination = {
-                    'sample_id': f"sample_{len(self.used_combinations) + 1}",
-                    'hash': combination_hash,
-                    'temperature': float(T),
-                    'electron_density': float(n_e),
-                    'elements': {k: v for k, v in atom_percentages.items()
-                                if k not in ['temperature', 'electron_density', 'delta_E_max']},
-                    'delta_E_max': atom_percentages['delta_E_max']
-                }
-                self._save_combination(combination)
-                self.used_combinations.add(combination_hash)
-                sample_generated = True
-
-            if not sample_generated:
-                self.logger.warning(f"Gagal menghasilkan sampel unik untuk T={T} K, n_e={n_e:.2e} cm^-3 setelah {max_attempts} percobaan")
-
-            if (i + 1) % (self.num_samples // 5) == 0:  # Log setiap 20%
-                current_temps = [param[0] for param in sample_params[:i + 1]]
-                current_counts = Counter(current_temps)
-                self.logger.info(f"Progres {(i + 1)/self.num_samples*100:.1f}%:")
-                for temp, count in current_counts.items():
-                    self.logger.info(f"Suhu {temp} K: {count} sampel ({count/(i + 1)*100:.2f}%)")
+        self._save_combinations(combinations_to_save)
 
         if not spectra_list:
             self.logger.error("Tidak ada sampel valid yang dihasilkan. Periksa data NIST atau konfigurasi simulator")
             raise ValueError("Tidak ada sampel valid yang dihasilkan")
 
+        element_counts = Counter()
+        for ap in atom_percentages_list:
+            elements = [k for k in ap.keys() if k not in ['temperature', 'electron_density', 'delta_E_max']]
+            element_counts.update(elements)
+        self.logger.info("Distribusi elemen di dataset:")
+        for elem, count in element_counts.most_common():
+            self.logger.info(f"{elem}: {count} sampel ({count/len(atom_percentages_list)*100:.2f}%)")
+
         spectra_array = np.array(spectra_list, dtype=np.float32)
-        labels_array = np.array(labels_list, dtype=np.int32)
+        labels_array = np.array(labels_list, dtype=np.float32)
         wavelengths_array = np.array(wavelengths_list[0], dtype=np.float32)
         atom_percentages_array = [json.dumps(d).encode('utf-8') for d in atom_percentages_list]
 
@@ -603,7 +672,7 @@ class DatasetGenerator:
             [atom_percentages_array[i] for i in test_idx]
         )
 
-        output_filename = "spectral_dataset.h5"
+        output_filename = "spectral_dataset-9.h5"
         output_path = os.path.join(processed_dir, output_filename)
         os.makedirs(processed_dir, exist_ok=True)
 
@@ -649,6 +718,8 @@ class DatasetGenerator:
 
             combined_data[ds_name] = (combined_spectra, combined_labels, combined_atom_percentages)
 
+        total_samples = total_existing_samples + len(spectra_list)  # Perbaikan: Definisikan total_samples
+
         with h5py.File(output_path, 'a') as f:
             for ds_name in ['train', 'validation', 'test']:
                 if ds_name in f:
@@ -658,15 +729,13 @@ class DatasetGenerator:
                 del f['wavelengths']
             f.create_dataset('wavelengths', data=wavelengths_array)
 
-            total_samples = 0
             for ds_name, (spectra, labels, atom_percentages) in combined_data.items():
                 ds_grp = f.create_group(ds_name)
                 ds_grp.create_dataset('spectra', data=spectra, compression='gzip')
                 ds_grp.create_dataset('labels', data=labels, compression='gzip')
                 ds_grp.create_dataset('atom_percentages', data=atom_percentages, compression='gzip')
-                total_samples += len(spectra)
 
-            f.attrs['lastbud'] = datetime.now().isoformat()
+            f.attrs['last_updated'] = datetime.now().isoformat()
             f.attrs['total_samples'] = total_samples
             f.attrs['simulation_config'] = json.dumps(self.config)
 
@@ -677,25 +746,32 @@ class DataManager:
     """Mengelola pemuatan data, validasi, dan operasi file."""
     def __init__(self, base_dir: str):
         self.base_dir = base_dir
-        self.data_dir = os.path.join(base_dir, "data")
+        self.data_dir = base_dir
         self.processed_dir = os.path.join(base_dir, "output")
         self.nist_target_path = os.path.join(self.data_dir, "nist_data(1).h5")
         self.atomic_data_target_path = os.path.join(self.data_dir, "atomic_data1.h5")
-        self.json_map_path = os.path.join(self.data_dir, "element_map.json")
+        self.json_map_path = os.path.join(self.data_dir, "element-map-9.json")
         self.logger = logging.getLogger('SpectralSimulation')
 
-    def load_element_map(self) -> Dict:
+    def load_element_map(self) -> Dict[str, List[float]]:
         if not os.path.exists(self.json_map_path):
             self.logger.error(f"element_map.json tidak ditemukan di {self.json_map_path}")
             raise FileNotFoundError(f"element_map.json tidak ditemukan")
         with open(self.json_map_path, 'r') as f:
             element_map = json.load(f)
 
-        for elem in REQUIRED_ELEMENTS:
-            if elem not in element_map or not isinstance(element_map[elem], list) or abs(sum(element_map[elem]) - 1.0) > 1e-6:
-                self.logger.error(f"Peta elemen tidak valid untuk {elem}: harus berupa daftar dengan jumlah 1.0")
-                raise ValueError(f"Peta elemen tidak valid untuk {elem}")
-        self.logger.info(f"Element map dimuat dengan {len(element_map)} elemen")
+        # Validasi bahwa setiap elemen memiliki vektor one-hot yang valid
+        vector_length = None
+        for elem, vector in element_map.items():
+            if not isinstance(vector, list) or not all(isinstance(v, (int, float)) for v in vector):
+                self.logger.error(f"Vektor one-hot tidak valid untuk {elem}: {vector}")
+                raise ValueError(f"Vektor one-hot tidak valid untuk {elem}")
+            if vector_length is None:
+                vector_length = len(vector)
+            elif len(vector) != vector_length:
+                self.logger.error(f"Panjang vektor one-hot tidak konsisten untuk {elem}: {len(vector)} vs {vector_length}")
+                raise ValueError(f"Panjang vektor one-hot tidak konsisten")
+        self.logger.info(f"Element map dimuat dengan {len(element_map)} elemen, panjang vektor one-hot: {vector_length}")
         return element_map
 
     def load_ionization_energies(self) -> Dict[str, float]:
@@ -743,22 +819,22 @@ class DataManager:
 
 def main():
     """Fungsi utama untuk menjalankan simulasi dan menghasilkan dataset."""
-    logger = setup_logging(base_dir="/home/bwalidain/birrulwldain", job_id=os.getenv("SLURM_JOB_ID", "unknown"))
+    logger = setup_logging(base_dir=SIMULATION_CONFIG["logs_dir"], job_id=os.getenv("SLURM_JOB_ID", "unknown"))
     logger.info("Memulai simulasi spektral")
-    if not ipex:
+    if ipex:
+        logger.info(f"Intel Extension for PyTorch tersedia, versi: {ipex_version}")
+    else:
         logger.warning("Intel Extension for PyTorch tidak tersedia. Lanjutkan tanpa optimasi IPEX")
 
     pd.set_option('future.no_silent_downcasting', True)
-    torch.set_num_threads(16)
+    torch.set_num_threads(24)
 
-    base_dir = "/home/bwalidain/birrulwldain"
+    base_dir = SIMULATION_CONFIG["data_dir"]
     data_manager = DataManager(base_dir)
 
-    # Muat peta elemen dan energi ionisasi
     element_map = data_manager.load_element_map()
     ionization_energies = data_manager.load_ionization_energies()
 
-    # Muat data NIST
     fetcher = DataFetcher(data_manager.nist_target_path)
     nist_data_dict = {}
     delta_E_max_dict = {}
@@ -770,7 +846,6 @@ def main():
         if not data:
             logger.warning(f"Tidak ada data NIST untuk {elem}")
 
-    # Buat simulator
     simulators = []
     for elem in nist_data_dict:
         if nist_data_dict[elem]:
@@ -782,7 +857,8 @@ def main():
                 int(ion),
                 SIMULATION_CONFIG["temperature_range"],
                 ion_energy,
-                SIMULATION_CONFIG
+                SIMULATION_CONFIG,
+                element_map_labels=element_map
             )
             simulators.append(simulator)
 
@@ -790,13 +866,13 @@ def main():
         logger.error("Tidak ada simulator valid yang dibuat. Periksa data NIST")
         raise ValueError("Tidak ada simulator valid yang dibuat")
 
-    # Hasilkan dataset
     generator = DatasetGenerator(SIMULATION_CONFIG)
     generator.generate_dataset(
         simulators,
         delta_E_max_dict,
         ionization_energies,
-        data_manager.processed_dir
+        SIMULATION_CONFIG["processed_dir"],
+        element_map_labels=element_map
     )
 
     logger.info("Simulasi selesai")

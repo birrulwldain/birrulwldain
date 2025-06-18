@@ -21,7 +21,7 @@ export OMP_NUM_THREADS=8 # Sesuaikan dengan cpus-per-task
 export PYTHONPATH=$PYTHONPATH:/home/bwalidain/birrulwldain
 
 # Menjalankan kode Python
-python /home/bwalidain/birrulwldain/sim2.py
+python /home/bwalidain/birrulwldain/sim2-s.py
 
 # Menonaktifkan lingkungan Conda setelah selesai
 conda deactivate
