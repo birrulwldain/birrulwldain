@@ -1,0 +1,5400 @@
+[
+  {
+    "sample_id": 0,
+    "category": "pure",
+    "temperature": 10252.525252525253,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 1,
+    "category": "pure",
+    "temperature": 7020.20202020202,
+    "electron_density": 6.135907273413188e+16,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 2,
+    "category": "pure",
+    "temperature": 11969.69696969697,
+    "electron_density": 132194114846602.88,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 3,
+    "category": "pure",
+    "temperature": 14393.939393939394,
+    "electron_density": 9.770099572992246e+16,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 4,
+    "category": "pure",
+    "temperature": 11161.616161616163,
+    "electron_density": 2.9150530628251696e+16,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 5,
+    "category": "pure",
+    "temperature": 14393.939393939394,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 6,
+    "category": "pure",
+    "temperature": 7323.232323232323,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 7,
+    "category": "pure",
+    "temperature": 5808.080808080808,
+    "electron_density": 120450354025878.36,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 8,
+    "category": "pure",
+    "temperature": 8030.30303030303,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 9,
+    "category": "pure",
+    "temperature": 8535.353535353535,
+    "electron_density": 849753435908643.9,
+    "base_elements": [
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 10,
+    "category": "pure",
+    "temperature": 14494.949494949495,
+    "electron_density": 159228279334109.38,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 11,
+    "category": "pure",
+    "temperature": 11565.656565656565,
+    "electron_density": 2.2570197196339168e+17,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 12,
+    "category": "pure",
+    "temperature": 14191.919191919193,
+    "electron_density": 9.770099572992246e+16,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 13,
+    "category": "pure",
+    "temperature": 5303.030303030303,
+    "electron_density": 1.4174741629268077e+17,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 14,
+    "category": "pure",
+    "temperature": 5505.050505050505,
+    "electron_density": 5.72236765935022e+17,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 15,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 2.9150530628251696e+16,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 16,
+    "category": "pure",
+    "temperature": 10656.565656565657,
+    "electron_density": 4.229242874389499e+16,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 17,
+    "category": "pure",
+    "temperature": 12878.78787878788,
+    "electron_density": 9.770099572992246e+16,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 18,
+    "category": "pure",
+    "temperature": 5707.070707070707,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 19,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 5994842503189421.0,
+    "base_elements": [
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 20,
+    "category": "pure",
+    "temperature": 9343.434343434343,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 21,
+    "category": "pure",
+    "temperature": 11969.69696969697,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 22,
+    "category": "pure",
+    "temperature": 11767.676767676767,
+    "electron_density": 533669923120630.2,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 23,
+    "category": "pure",
+    "temperature": 13383.838383838383,
+    "electron_density": 7.56463327554629e+17,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 24,
+    "category": "pure",
+    "temperature": 6919.191919191919,
+    "electron_density": 278255940220712.6,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 25,
+    "category": "pure",
+    "temperature": 9646.464646464647,
+    "electron_density": 100000000000000.0,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 26,
+    "category": "pure",
+    "temperature": 13989.89898989899,
+    "electron_density": 335160265093884.75,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 27,
+    "category": "pure",
+    "temperature": 11363.636363636364,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 28,
+    "category": "pure",
+    "temperature": 8636.363636363636,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 29,
+    "category": "pure",
+    "temperature": 15000.0,
+    "electron_density": 1.1768119524350038e+17,
+    "base_elements": [
+      "C"
+    ]
+  },
+  {
+    "sample_id": 30,
+    "category": "pure",
+    "temperature": 5202.020202020202,
+    "electron_density": 1963040650040268.2,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 31,
+    "category": "pure",
+    "temperature": 5505.050505050505,
+    "electron_density": 9545484566618328.0,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 32,
+    "category": "pure",
+    "temperature": 5909.090909090909,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 33,
+    "category": "pure",
+    "temperature": 7222.222222222223,
+    "electron_density": 231012970008315.8,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 34,
+    "category": "pure",
+    "temperature": 9343.434343434343,
+    "electron_density": 109749876549305.45,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 35,
+    "category": "pure",
+    "temperature": 6212.121212121212,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 36,
+    "category": "pure",
+    "temperature": 5101.010101010101,
+    "electron_density": 2.2570197196339168e+17,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 37,
+    "category": "pure",
+    "temperature": 11464.646464646465,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 38,
+    "category": "pure",
+    "temperature": 12272.727272727272,
+    "electron_density": 443062145758388.7,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 39,
+    "category": "pure",
+    "temperature": 5808.080808080808,
+    "electron_density": 9.770099572992246e+16,
+    "base_elements": [
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 40,
+    "category": "pure",
+    "temperature": 6414.141414141414,
+    "electron_density": 849753435908643.9,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 41,
+    "category": "pure",
+    "temperature": 8737.373737373737,
+    "electron_density": 2364489412645407.0,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 42,
+    "category": "pure",
+    "temperature": 14393.939393939394,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 43,
+    "category": "pure",
+    "temperature": 9848.484848484848,
+    "electron_density": 5.590810182512222e+16,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 44,
+    "category": "pure",
+    "temperature": 11161.616161616163,
+    "electron_density": 2.420128264794383e+16,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 45,
+    "category": "pure",
+    "temperature": 9949.49494949495,
+    "electron_density": 1.2915496650148827e+17,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 46,
+    "category": "pure",
+    "temperature": 12474.747474747473,
+    "electron_density": 210490414451202.2,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 47,
+    "category": "pure",
+    "temperature": 8333.333333333334,
+    "electron_density": 1.0722672220103253e+17,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 48,
+    "category": "pure",
+    "temperature": 14898.9898989899,
+    "electron_density": 2364489412645407.0,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 49,
+    "category": "pure",
+    "temperature": 5000.0,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 50,
+    "category": "pure",
+    "temperature": 11363.636363636364,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 51,
+    "category": "pure",
+    "temperature": 10959.59595959596,
+    "electron_density": 3.5111917342151416e+16,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 52,
+    "category": "pure",
+    "temperature": 14292.929292929293,
+    "electron_density": 7.390722033525776e+16,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 53,
+    "category": "pure",
+    "temperature": 6010.101010101011,
+    "electron_density": 335160265093884.75,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 54,
+    "category": "pure",
+    "temperature": 10959.59595959596,
+    "electron_density": 1484968262254463.5,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 55,
+    "category": "pure",
+    "temperature": 8434.343434343435,
+    "electron_density": 2.477076355991714e+17,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 56,
+    "category": "pure",
+    "temperature": 8636.363636363636,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 57,
+    "category": "pure",
+    "temperature": 13282.828282828283,
+    "electron_density": 1.2915496650148827e+17,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 58,
+    "category": "pure",
+    "temperature": 7525.252525252525,
+    "electron_density": 2.9150530628251696e+16,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 59,
+    "category": "pure",
+    "temperature": 5303.030303030303,
+    "electron_density": 3.5938136638046406e+17,
+    "base_elements": [
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 60,
+    "category": "pure",
+    "temperature": 9141.414141414141,
+    "electron_density": 3.5938136638046406e+17,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 61,
+    "category": "pure",
+    "temperature": 6717.171717171717,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 62,
+    "category": "pure",
+    "temperature": 12171.717171717171,
+    "electron_density": 3430469286314926.0,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 63,
+    "category": "pure",
+    "temperature": 6313.131313131313,
+    "electron_density": 1788649529057435.0,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 64,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 65,
+    "category": "pure",
+    "temperature": 14696.969696969696,
+    "electron_density": 774263682681127.8,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 66,
+    "category": "pure",
+    "temperature": 11262.626262626261,
+    "electron_density": 367837977182863.44,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 67,
+    "category": "pure",
+    "temperature": 14696.969696969696,
+    "electron_density": 932603346883218.0,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 68,
+    "category": "pure",
+    "temperature": 6616.161616161617,
+    "electron_density": 7.56463327554629e+17,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 69,
+    "category": "pure",
+    "temperature": 11565.656565656565,
+    "electron_density": 1.2915496650148827e+17,
+    "base_elements": [
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 70,
+    "category": "pure",
+    "temperature": 10252.525252525253,
+    "electron_density": 1.0476157527896662e+16,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 71,
+    "category": "pure",
+    "temperature": 8838.383838383837,
+    "electron_density": 1.0476157527896662e+16,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 72,
+    "category": "pure",
+    "temperature": 11969.69696969697,
+    "electron_density": 159228279334109.38,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 73,
+    "category": "pure",
+    "temperature": 11666.666666666668,
+    "electron_density": 174752840000768.28,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 74,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 7.390722033525776e+16,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 75,
+    "category": "pure",
+    "temperature": 9141.414141414141,
+    "electron_density": 3.5111917342151416e+16,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 76,
+    "category": "pure",
+    "temperature": 6414.141414141414,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 77,
+    "category": "pure",
+    "temperature": 8232.323232323233,
+    "electron_density": 5.72236765935022e+17,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 78,
+    "category": "pure",
+    "temperature": 7626.262626262626,
+    "electron_density": 2595024211399742.5,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 79,
+    "category": "pure",
+    "temperature": 7828.282828282829,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 80,
+    "category": "pure",
+    "temperature": 10656.565656565657,
+    "electron_density": 7.56463327554629e+17,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 81,
+    "category": "pure",
+    "temperature": 7626.262626262626,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 82,
+    "category": "pure",
+    "temperature": 8232.323232323233,
+    "electron_density": 5.094138014816365e+16,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 83,
+    "category": "pure",
+    "temperature": 13585.858585858587,
+    "electron_density": 4.229242874389499e+16,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 84,
+    "category": "pure",
+    "temperature": 5909.090909090909,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 85,
+    "category": "pure",
+    "temperature": 12373.737373737375,
+    "electron_density": 7.56463327554629e+17,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 86,
+    "category": "pure",
+    "temperature": 8737.373737373737,
+    "electron_density": 305385550883341.25,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 87,
+    "category": "pure",
+    "temperature": 8030.30303030303,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 88,
+    "category": "pure",
+    "temperature": 15000.0,
+    "electron_density": 3.274549162877732e+17,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 89,
+    "category": "pure",
+    "temperature": 10151.515151515152,
+    "electron_density": 1.6681005372000558e+16,
+    "base_elements": [
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 90,
+    "category": "pure",
+    "temperature": 6414.141414141414,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 91,
+    "category": "pure",
+    "temperature": 5707.070707070707,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 92,
+    "category": "pure",
+    "temperature": 7828.282828282829,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 93,
+    "category": "pure",
+    "temperature": 11767.676767676767,
+    "electron_density": 1.0722672220103253e+17,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 94,
+    "category": "pure",
+    "temperature": 9444.444444444445,
+    "electron_density": 109749876549305.45,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 95,
+    "category": "pure",
+    "temperature": 7626.262626262626,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 96,
+    "category": "pure",
+    "temperature": 8535.353535353535,
+    "electron_density": 2595024211399742.5,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 97,
+    "category": "pure",
+    "temperature": 7525.252525252525,
+    "electron_density": 4977023564332114.0,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 98,
+    "category": "pure",
+    "temperature": 7626.262626262626,
+    "electron_density": 5.590810182512222e+16,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 99,
+    "category": "pure",
+    "temperature": 6919.191919191919,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 100,
+    "category": "pure",
+    "temperature": 12373.737373737375,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 101,
+    "category": "pure",
+    "temperature": 5505.050505050505,
+    "electron_density": 7.390722033525776e+16,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 102,
+    "category": "pure",
+    "temperature": 7222.222222222223,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 103,
+    "category": "pure",
+    "temperature": 13989.89898989899,
+    "electron_density": 6579332246575682.0,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 104,
+    "category": "pure",
+    "temperature": 6111.111111111111,
+    "electron_density": 3.944206059437648e+17,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 105,
+    "category": "pure",
+    "temperature": 6212.121212121212,
+    "electron_density": 2.9150530628251696e+16,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 106,
+    "category": "pure",
+    "temperature": 13181.818181818182,
+    "electron_density": 3.5938136638046406e+17,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 107,
+    "category": "pure",
+    "temperature": 14696.969696969696,
+    "electron_density": 2.420128264794383e+16,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 108,
+    "category": "pure",
+    "temperature": 9242.424242424242,
+    "electron_density": 1.0722672220103253e+17,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 109,
+    "category": "pure",
+    "temperature": 15000.0,
+    "electron_density": 5.094138014816365e+16,
+    "base_elements": [
+      "N"
+    ]
+  },
+  {
+    "sample_id": 110,
+    "category": "pure",
+    "temperature": 5404.040404040404,
+    "electron_density": 2848035868435805.0,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 111,
+    "category": "pure",
+    "temperature": 12171.717171717171,
+    "electron_density": 4.750810162102813e+17,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 112,
+    "category": "pure",
+    "temperature": 8030.30303030303,
+    "electron_density": 210490414451202.2,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 113,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 114,
+    "category": "pure",
+    "temperature": 12777.777777777777,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 115,
+    "category": "pure",
+    "temperature": 9040.40404040404,
+    "electron_density": 2.7185882427329514e+17,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 116,
+    "category": "pure",
+    "temperature": 6010.101010101011,
+    "electron_density": 774263682681127.8,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 117,
+    "category": "pure",
+    "temperature": 5000.0,
+    "electron_density": 6579332246575682.0,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 118,
+    "category": "pure",
+    "temperature": 7020.20202020202,
+    "electron_density": 3.944206059437648e+17,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 119,
+    "category": "pure",
+    "temperature": 8535.353535353535,
+    "electron_density": 1.3848863713938746e+16,
+    "base_elements": [
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 120,
+    "category": "pure",
+    "temperature": 13686.868686868687,
+    "electron_density": 1.8307382802953696e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 121,
+    "category": "pure",
+    "temperature": 5000.0,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 122,
+    "category": "pure",
+    "temperature": 10353.535353535353,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 123,
+    "category": "pure",
+    "temperature": 8939.39393939394,
+    "electron_density": 367837977182863.44,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 124,
+    "category": "pure",
+    "temperature": 7020.20202020202,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 125,
+    "category": "pure",
+    "temperature": 12272.727272727272,
+    "electron_density": 1.2618568830660184e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 126,
+    "category": "pure",
+    "temperature": 5808.080808080808,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 127,
+    "category": "pure",
+    "temperature": 10151.515151515152,
+    "electron_density": 1.8307382802953696e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 128,
+    "category": "pure",
+    "temperature": 7525.252525252525,
+    "electron_density": 4132012400115334.5,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 129,
+    "category": "pure",
+    "temperature": 8434.343434343435,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 130,
+    "category": "pure",
+    "temperature": 7424.242424242424,
+    "electron_density": 3.944206059437648e+17,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 131,
+    "category": "pure",
+    "temperature": 12474.747474747473,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 132,
+    "category": "pure",
+    "temperature": 5101.010101010101,
+    "electron_density": 174752840000768.28,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 133,
+    "category": "pure",
+    "temperature": 13181.818181818182,
+    "electron_density": 4.328761281083062e+17,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 134,
+    "category": "pure",
+    "temperature": 8333.333333333334,
+    "electron_density": 4.328761281083062e+17,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 135,
+    "category": "pure",
+    "temperature": 6616.161616161617,
+    "electron_density": 4977023564332114.0,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 136,
+    "category": "pure",
+    "temperature": 10858.585858585859,
+    "electron_density": 1.0476157527896662e+16,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 137,
+    "category": "pure",
+    "temperature": 10353.535353535353,
+    "electron_density": 849753435908643.9,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 138,
+    "category": "pure",
+    "temperature": 7424.242424242424,
+    "electron_density": 6.734150657750856e+16,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 139,
+    "category": "pure",
+    "temperature": 10151.515151515152,
+    "electron_density": 6.135907273413188e+16,
+    "base_elements": [
+      "O"
+    ]
+  },
+  {
+    "sample_id": 140,
+    "category": "pure",
+    "temperature": 13787.878787878788,
+    "electron_density": 1963040650040268.2,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 141,
+    "category": "pure",
+    "temperature": 9848.484848484848,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 142,
+    "category": "pure",
+    "temperature": 11262.626262626261,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 143,
+    "category": "pure",
+    "temperature": 7525.252525252525,
+    "electron_density": 1232846739442068.5,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 144,
+    "category": "pure",
+    "temperature": 13484.848484848484,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 145,
+    "category": "pure",
+    "temperature": 12070.70707070707,
+    "electron_density": 1.7073526474706886e+17,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 146,
+    "category": "pure",
+    "temperature": 13383.838383838383,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 147,
+    "category": "pure",
+    "temperature": 6919.191919191919,
+    "electron_density": 2.7185882427329514e+17,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 148,
+    "category": "pure",
+    "temperature": 14191.919191919193,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 149,
+    "category": "pure",
+    "temperature": 11060.60606060606,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "S"
+    ]
+  },
+  {
+    "sample_id": 150,
+    "category": "pure",
+    "temperature": 12070.70707070707,
+    "electron_density": 100000000000000.0,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 151,
+    "category": "pure",
+    "temperature": 14595.959595959595,
+    "electron_density": 305385550883341.25,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 152,
+    "category": "pure",
+    "temperature": 14393.939393939394,
+    "electron_density": 2.9836472402833344e+17,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 153,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 1.6681005372000558e+16,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 154,
+    "category": "pure",
+    "temperature": 13282.828282828283,
+    "electron_density": 2.9150530628251696e+16,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 155,
+    "category": "pure",
+    "temperature": 8131.313131313131,
+    "electron_density": 1484968262254463.5,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 156,
+    "category": "pure",
+    "temperature": 7828.282828282829,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 157,
+    "category": "pure",
+    "temperature": 9444.444444444445,
+    "electron_density": 5.2140082879996736e+17,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 158,
+    "category": "pure",
+    "temperature": 7929.292929292929,
+    "electron_density": 403701725859654.94,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 159,
+    "category": "pure",
+    "temperature": 8939.39393939394,
+    "electron_density": 533669923120630.2,
+    "base_elements": [
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 160,
+    "category": "pure",
+    "temperature": 6717.171717171717,
+    "electron_density": 100000000000000.0,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 161,
+    "category": "pure",
+    "temperature": 12777.777777777777,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 162,
+    "category": "pure",
+    "temperature": 11565.656565656565,
+    "electron_density": 4.750810162102813e+17,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 163,
+    "category": "pure",
+    "temperature": 14393.939393939394,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 164,
+    "category": "pure",
+    "temperature": 10050.50505050505,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 165,
+    "category": "pure",
+    "temperature": 5303.030303030303,
+    "electron_density": 100000000000000.0,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 166,
+    "category": "pure",
+    "temperature": 5707.070707070707,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 167,
+    "category": "pure",
+    "temperature": 10454.545454545456,
+    "electron_density": 120450354025878.36,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 168,
+    "category": "pure",
+    "temperature": 8131.313131313131,
+    "electron_density": 231012970008315.8,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 169,
+    "category": "pure",
+    "temperature": 12373.737373737375,
+    "electron_density": 2.05651230834866e+17,
+    "base_elements": [
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 170,
+    "category": "pair",
+    "temperature": 8333.333333333334,
+    "electron_density": 7.56463327554629e+17,
+    "base_elements": [
+      "Cl",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 171,
+    "category": "pair",
+    "temperature": 13686.868686868687,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Al",
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 172,
+    "category": "pair",
+    "temperature": 14191.919191919193,
+    "electron_density": 1788649529057435.0,
+    "base_elements": [
+      "Cl",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 173,
+    "category": "pair",
+    "temperature": 9949.49494949495,
+    "electron_density": 174752840000768.28,
+    "base_elements": [
+      "Al",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 174,
+    "category": "pair",
+    "temperature": 14292.929292929293,
+    "electron_density": 191791026167249.28,
+    "base_elements": [
+      "C",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 175,
+    "category": "pair",
+    "temperature": 11464.646464646465,
+    "electron_density": 1.8307382802953696e+16,
+    "base_elements": [
+      "N",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 176,
+    "category": "pair",
+    "temperature": 11666.666666666668,
+    "electron_density": 3.274549162877732e+17,
+    "base_elements": [
+      "O",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 177,
+    "category": "pair",
+    "temperature": 13686.868686868687,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Mn",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 178,
+    "category": "pair",
+    "temperature": 12171.717171717171,
+    "electron_density": 1.3848863713938746e+16,
+    "base_elements": [
+      "Co",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 179,
+    "category": "pair",
+    "temperature": 11666.666666666668,
+    "electron_density": 1.0476157527896662e+16,
+    "base_elements": [
+      "Ca",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 180,
+    "category": "pair",
+    "temperature": 14696.969696969696,
+    "electron_density": 4.750810162102813e+17,
+    "base_elements": [
+      "Mn",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 181,
+    "category": "pair",
+    "temperature": 5707.070707070707,
+    "electron_density": 2154434690031886.8,
+    "base_elements": [
+      "Na",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 182,
+    "category": "pair",
+    "temperature": 8434.343434343435,
+    "electron_density": 6.89261210434968e+17,
+    "base_elements": [
+      "Ar",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 183,
+    "category": "pair",
+    "temperature": 13787.878787878788,
+    "electron_density": 1.2915496650148827e+17,
+    "base_elements": [
+      "N",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 184,
+    "category": "pair",
+    "temperature": 8131.313131313131,
+    "electron_density": 6579332246575682.0,
+    "base_elements": [
+      "Cr",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 185,
+    "category": "pair",
+    "temperature": 6515.151515151515,
+    "electron_density": 5.094138014816365e+16,
+    "base_elements": [
+      "Mg",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 186,
+    "category": "pair",
+    "temperature": 8636.363636363636,
+    "electron_density": 1.3848863713938746e+16,
+    "base_elements": [
+      "Cr",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 187,
+    "category": "pair",
+    "temperature": 13484.848484848484,
+    "electron_density": 335160265093884.75,
+    "base_elements": [
+      "Cr",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 188,
+    "category": "pair",
+    "temperature": 14494.949494949495,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Ar",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 189,
+    "category": "pair",
+    "temperature": 9747.474747474747,
+    "electron_density": 1.873817422860387e+17,
+    "base_elements": [
+      "C",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 190,
+    "category": "pair",
+    "temperature": 5606.060606060606,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": [
+      "Cr",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 191,
+    "category": "pair",
+    "temperature": 5606.060606060606,
+    "electron_density": 1963040650040268.2,
+    "base_elements": [
+      "Mg",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 192,
+    "category": "pair",
+    "temperature": 7222.222222222223,
+    "electron_density": 2.477076355991714e+17,
+    "base_elements": [
+      "Ni",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 193,
+    "category": "pair",
+    "temperature": 6818.181818181818,
+    "electron_density": 533669923120630.2,
+    "base_elements": [
+      "Co",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 194,
+    "category": "pair",
+    "temperature": 8535.353535353535,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Mg",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 195,
+    "category": "pair",
+    "temperature": 10959.59595959596,
+    "electron_density": 1.873817422860387e+17,
+    "base_elements": [
+      "Al",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 196,
+    "category": "pair",
+    "temperature": 5101.010101010101,
+    "electron_density": 100000000000000.0,
+    "base_elements": [
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 197,
+    "category": "pair",
+    "temperature": 9646.464646464647,
+    "electron_density": 5.590810182512222e+16,
+    "base_elements": [
+      "Ar",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 198,
+    "category": "pair",
+    "temperature": 6919.191919191919,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "Co",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 199,
+    "category": "pair",
+    "temperature": 5101.010101010101,
+    "electron_density": 4.641588833612791e+16,
+    "base_elements": [
+      "Cl",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 200,
+    "category": "pair",
+    "temperature": 13686.868686868687,
+    "electron_density": 278255940220712.6,
+    "base_elements": [
+      "Cr",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 201,
+    "category": "pair",
+    "temperature": 6919.191919191919,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Ar",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 202,
+    "category": "pair",
+    "temperature": 8636.363636363636,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "Mg",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 203,
+    "category": "pair",
+    "temperature": 14393.939393939394,
+    "electron_density": 210490414451202.2,
+    "base_elements": [
+      "O",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 204,
+    "category": "pair",
+    "temperature": 14797.979797979799,
+    "electron_density": 1.2618568830660184e+16,
+    "base_elements": [
+      "Al",
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 205,
+    "category": "pair",
+    "temperature": 9343.434343434343,
+    "electron_density": 9.111627561154868e+17,
+    "base_elements": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 206,
+    "category": "pair",
+    "temperature": 13585.858585858587,
+    "electron_density": 849753435908643.9,
+    "base_elements": [
+      "Mg",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 207,
+    "category": "pair",
+    "temperature": 13080.808080808081,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": [
+      "Al",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 208,
+    "category": "pair",
+    "temperature": 7929.292929292929,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Ca",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 209,
+    "category": "pair",
+    "temperature": 13686.868686868687,
+    "electron_density": 6.89261210434968e+17,
+    "base_elements": [
+      "O",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 210,
+    "category": "pair",
+    "temperature": 13080.808080808081,
+    "electron_density": 1.7073526474706886e+17,
+    "base_elements": [
+      "Fe",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 211,
+    "category": "pair",
+    "temperature": 6313.131313131313,
+    "electron_density": 210490414451202.2,
+    "base_elements": [
+      "Ni",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 212,
+    "category": "pair",
+    "temperature": 8939.39393939394,
+    "electron_density": 4.229242874389499e+16,
+    "base_elements": [
+      "Mn",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 213,
+    "category": "pair",
+    "temperature": 7424.242424242424,
+    "electron_density": 8.11130830789689e+16,
+    "base_elements": [
+      "Al",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 214,
+    "category": "pair",
+    "temperature": 7121.212121212121,
+    "electron_density": 132194114846602.88,
+    "base_elements": [
+      "Ca",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 215,
+    "category": "pair",
+    "temperature": 7525.252525252525,
+    "electron_density": 2.009233002565054e+16,
+    "base_elements": [
+      "Cl",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 216,
+    "category": "pair",
+    "temperature": 7828.282828282829,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "C",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 217,
+    "category": "pair",
+    "temperature": 13686.868686868687,
+    "electron_density": 2848035868435805.0,
+    "base_elements": [
+      "Co",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 218,
+    "category": "pair",
+    "temperature": 12474.747474747473,
+    "electron_density": 6.135907273413188e+16,
+    "base_elements": [
+      "Mn",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 219,
+    "category": "pair",
+    "temperature": 6717.171717171717,
+    "electron_density": 2.477076355991714e+17,
+    "base_elements": [
+      "Na",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 220,
+    "category": "pair",
+    "temperature": 9141.414141414141,
+    "electron_density": 1e+18,
+    "base_elements": [
+      "C",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 221,
+    "category": "pair",
+    "temperature": 9040.40404040404,
+    "electron_density": 3125715849688235.0,
+    "base_elements": [
+      "Al",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 222,
+    "category": "pair",
+    "temperature": 8333.333333333334,
+    "electron_density": 443062145758388.7,
+    "base_elements": [
+      "Cl",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 223,
+    "category": "pair",
+    "temperature": 8636.363636363636,
+    "electron_density": 932603346883218.0,
+    "base_elements": [
+      "C",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 224,
+    "category": "pair",
+    "temperature": 12575.757575757576,
+    "electron_density": 2.9836472402833344e+17,
+    "base_elements": [
+      "Co",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 225,
+    "category": "pair",
+    "temperature": 13585.858585858587,
+    "electron_density": 2.477076355991714e+17,
+    "base_elements": [
+      "Al",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 226,
+    "category": "pair",
+    "temperature": 7626.262626262626,
+    "electron_density": 1.8307382802953696e+16,
+    "base_elements": [
+      "Mg",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 227,
+    "category": "pair",
+    "temperature": 8030.30303030303,
+    "electron_density": 159228279334109.38,
+    "base_elements": [
+      "Ar",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 228,
+    "category": "pair",
+    "temperature": 14090.90909090909,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Ca",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 229,
+    "category": "pair",
+    "temperature": 14797.979797979799,
+    "electron_density": 278255940220712.6,
+    "base_elements": [
+      "Ar",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 230,
+    "category": "pair",
+    "temperature": 10252.525252525253,
+    "electron_density": 6.734150657750856e+16,
+    "base_elements": [
+      "N",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 231,
+    "category": "pair",
+    "temperature": 5909.090909090909,
+    "electron_density": 5994842503189421.0,
+    "base_elements": [
+      "Ar",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 232,
+    "category": "pair",
+    "temperature": 6616.161616161617,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "C",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 233,
+    "category": "pair",
+    "temperature": 13484.848484848484,
+    "electron_density": 4.750810162102813e+17,
+    "base_elements": [
+      "Ni",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 234,
+    "category": "pair",
+    "temperature": 11161.616161616163,
+    "electron_density": 6579332246575682.0,
+    "base_elements": [
+      "Co",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 235,
+    "category": "pair",
+    "temperature": 11363.636363636364,
+    "electron_density": 109749876549305.45,
+    "base_elements": [
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 236,
+    "category": "pair",
+    "temperature": 10353.535353535353,
+    "electron_density": 3.853528593710519e+16,
+    "base_elements": [
+      "Cl",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 237,
+    "category": "pair",
+    "temperature": 10050.50505050505,
+    "electron_density": 1.2618568830660184e+16,
+    "base_elements": [
+      "Mg",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 238,
+    "category": "pair",
+    "temperature": 8535.353535353535,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "Na",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 239,
+    "category": "pair",
+    "temperature": 7828.282828282829,
+    "electron_density": 642807311728431.9,
+    "base_elements": [
+      "N",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 240,
+    "category": "pair",
+    "temperature": 6010.101010101011,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Cl",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 241,
+    "category": "pair",
+    "temperature": 6010.101010101011,
+    "electron_density": 2595024211399742.5,
+    "base_elements": [
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 242,
+    "category": "pair",
+    "temperature": 10858.585858585859,
+    "electron_density": 3430469286314926.0,
+    "base_elements": [
+      "C",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 243,
+    "category": "pair",
+    "temperature": 14898.9898989899,
+    "electron_density": 1.3848863713938746e+16,
+    "base_elements": [
+      "Fe",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 244,
+    "category": "pair",
+    "temperature": 14797.979797979799,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Ca",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 245,
+    "category": "pair",
+    "temperature": 7323.232323232323,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 246,
+    "category": "pair",
+    "temperature": 11868.68686868687,
+    "electron_density": 1.6681005372000558e+16,
+    "base_elements": [
+      "C",
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 247,
+    "category": "pair",
+    "temperature": 8232.323232323233,
+    "electron_density": 2595024211399742.5,
+    "base_elements": [
+      "Ar",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 248,
+    "category": "pair",
+    "temperature": 6919.191919191919,
+    "electron_density": 2.05651230834866e+17,
+    "base_elements": [
+      "Co",
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 249,
+    "category": "pair",
+    "temperature": 14898.9898989899,
+    "electron_density": 1.7073526474706886e+17,
+    "base_elements": [
+      "Mg",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 250,
+    "category": "pair",
+    "temperature": 11161.616161616163,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "Cr",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 251,
+    "category": "pair",
+    "temperature": 12272.727272727272,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "Ni",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 252,
+    "category": "pair",
+    "temperature": 11565.656565656565,
+    "electron_density": 8.11130830789689e+16,
+    "base_elements": [
+      "Cl",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 253,
+    "category": "pair",
+    "temperature": 12272.727272727272,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Al",
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 254,
+    "category": "pair",
+    "temperature": 6616.161616161617,
+    "electron_density": 100000000000000.0,
+    "base_elements": [
+      "Co",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 255,
+    "category": "pair",
+    "temperature": 13888.888888888889,
+    "electron_density": 2.6560877829466948e+16,
+    "base_elements": [
+      "Co",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 256,
+    "category": "pair",
+    "temperature": 9242.424242424242,
+    "electron_density": 4534878508128591.0,
+    "base_elements": [
+      "Na",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 257,
+    "category": "pair",
+    "temperature": 7424.242424242424,
+    "electron_density": 3430469286314926.0,
+    "base_elements": [
+      "C",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 258,
+    "category": "pair",
+    "temperature": 8434.343434343435,
+    "electron_density": 120450354025878.36,
+    "base_elements": [
+      "Mn",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 259,
+    "category": "pair",
+    "temperature": 9343.434343434343,
+    "electron_density": 1.0476157527896662e+16,
+    "base_elements": [
+      "Na",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 260,
+    "category": "pair",
+    "temperature": 14393.939393939394,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "Cr",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 261,
+    "category": "pair",
+    "temperature": 6111.111111111111,
+    "electron_density": 533669923120630.2,
+    "base_elements": [
+      "Cr",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 262,
+    "category": "pair",
+    "temperature": 9343.434343434343,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Fe",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 263,
+    "category": "pair",
+    "temperature": 9848.484848484848,
+    "electron_density": 2.6560877829466948e+16,
+    "base_elements": [
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 264,
+    "category": "pair",
+    "temperature": 6616.161616161617,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": [
+      "Cr",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 265,
+    "category": "pair",
+    "temperature": 10656.565656565657,
+    "electron_density": 1.5199110829529394e+16,
+    "base_elements": [
+      "Ca",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 266,
+    "category": "pair",
+    "temperature": 9646.464646464647,
+    "electron_density": 278255940220712.6,
+    "base_elements": [
+      "Cl",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 267,
+    "category": "pair",
+    "temperature": 11161.616161616163,
+    "electron_density": 1.555676143930466e+17,
+    "base_elements": [
+      "Fe",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 268,
+    "category": "pair",
+    "temperature": 13787.878787878788,
+    "electron_density": 2.05651230834866e+17,
+    "base_elements": [
+      "Cl",
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 269,
+    "category": "pair",
+    "temperature": 5707.070707070707,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "Mg",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 270,
+    "category": "trio",
+    "temperature": 7020.20202020202,
+    "electron_density": 1.7073526474706886e+17,
+    "base_elements": [
+      "Al",
+      "Cl",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 271,
+    "category": "trio",
+    "temperature": 13686.868686868687,
+    "electron_density": 1.555676143930466e+17,
+    "base_elements": [
+      "Ca",
+      "Cl",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 272,
+    "category": "trio",
+    "temperature": 11969.69696969697,
+    "electron_density": 7.390722033525776e+16,
+    "base_elements": [
+      "Co",
+      "Mg",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 273,
+    "category": "trio",
+    "temperature": 7424.242424242424,
+    "electron_density": 1.873817422860387e+17,
+    "base_elements": [
+      "Ca",
+      "O",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 274,
+    "category": "trio",
+    "temperature": 13888.888888888889,
+    "electron_density": 278255940220712.6,
+    "base_elements": [
+      "Cl",
+      "Co",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 275,
+    "category": "trio",
+    "temperature": 6414.141414141414,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "S",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 276,
+    "category": "trio",
+    "temperature": 7525.252525252525,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "Na",
+      "S",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 277,
+    "category": "trio",
+    "temperature": 9646.464646464647,
+    "electron_density": 1788649529057435.0,
+    "base_elements": [
+      "Ar",
+      "Cl",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 278,
+    "category": "trio",
+    "temperature": 5909.090909090909,
+    "electron_density": 403701725859654.94,
+    "base_elements": [
+      "Co",
+      "Ni",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 279,
+    "category": "trio",
+    "temperature": 12070.70707070707,
+    "electron_density": 443062145758388.7,
+    "base_elements": [
+      "Al",
+      "Ca",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 280,
+    "category": "trio",
+    "temperature": 7222.222222222223,
+    "electron_density": 1023531021899026.9,
+    "base_elements": [
+      "Ar",
+      "C",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 281,
+    "category": "trio",
+    "temperature": 13484.848484848484,
+    "electron_density": 2.7185882427329514e+17,
+    "base_elements": [
+      "Co",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 282,
+    "category": "trio",
+    "temperature": 5606.060606060606,
+    "electron_density": 335160265093884.75,
+    "base_elements": [
+      "Mg",
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 283,
+    "category": "trio",
+    "temperature": 12878.78787878788,
+    "electron_density": 174752840000768.28,
+    "base_elements": [
+      "Ca",
+      "Cr",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 284,
+    "category": "trio",
+    "temperature": 5808.080808080808,
+    "electron_density": 7924828983539186.0,
+    "base_elements": [
+      "Al",
+      "N",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 285,
+    "category": "trio",
+    "temperature": 12171.717171717171,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Cl",
+      "Ni",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 286,
+    "category": "trio",
+    "temperature": 13686.868686868687,
+    "electron_density": 5.2140082879996736e+17,
+    "base_elements": [
+      "Al",
+      "N",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 287,
+    "category": "trio",
+    "temperature": 13181.818181818182,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "Cr",
+      "Mn",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 288,
+    "category": "trio",
+    "temperature": 14393.939393939394,
+    "electron_density": 3430469286314926.0,
+    "base_elements": [
+      "Co",
+      "Cr",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 289,
+    "category": "trio",
+    "temperature": 14898.9898989899,
+    "electron_density": 486260158006535.3,
+    "base_elements": [
+      "Al",
+      "C",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 290,
+    "category": "trio",
+    "temperature": 10858.585858585859,
+    "electron_density": 443062145758388.7,
+    "base_elements": [
+      "Ar",
+      "Cl",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 291,
+    "category": "trio",
+    "temperature": 6313.131313131313,
+    "electron_density": 1629750834620646.8,
+    "base_elements": [
+      "Cl",
+      "Fe",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 292,
+    "category": "trio",
+    "temperature": 7323.232323232323,
+    "electron_density": 9.111627561154868e+17,
+    "base_elements": [
+      "Ni",
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 293,
+    "category": "trio",
+    "temperature": 10959.59595959596,
+    "electron_density": 5994842503189421.0,
+    "base_elements": [
+      "Ar",
+      "Cl",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 294,
+    "category": "trio",
+    "temperature": 14797.979797979799,
+    "electron_density": 120450354025878.36,
+    "base_elements": [
+      "Al",
+      "Fe",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 295,
+    "category": "trio",
+    "temperature": 8636.363636363636,
+    "electron_density": 4977023564332114.0,
+    "base_elements": [
+      "Co",
+      "Mg",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 296,
+    "category": "trio",
+    "temperature": 8939.39393939394,
+    "electron_density": 3.944206059437648e+17,
+    "base_elements": [
+      "C",
+      "Fe",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 297,
+    "category": "trio",
+    "temperature": 10454.545454545456,
+    "electron_density": 2.9836472402833344e+17,
+    "base_elements": [
+      "Ca",
+      "Cr",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 298,
+    "category": "trio",
+    "temperature": 8838.383838383837,
+    "electron_density": 367837977182863.44,
+    "base_elements": [
+      "Mn",
+      "Ni",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 299,
+    "category": "trio",
+    "temperature": 5303.030303030303,
+    "electron_density": 5.2140082879996736e+17,
+    "base_elements": [
+      "Cl",
+      "Cr",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 300,
+    "category": "trio",
+    "temperature": 13585.858585858587,
+    "electron_density": 932603346883218.0,
+    "base_elements": [
+      "Na",
+      "O",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 301,
+    "category": "trio",
+    "temperature": 6212.121212121212,
+    "electron_density": 1.873817422860387e+17,
+    "base_elements": [
+      "Al",
+      "Fe",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 302,
+    "category": "trio",
+    "temperature": 8232.323232323233,
+    "electron_density": 403701725859654.94,
+    "base_elements": [
+      "Ca",
+      "Co",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 303,
+    "category": "trio",
+    "temperature": 9141.414141414141,
+    "electron_density": 4.229242874389499e+16,
+    "base_elements": [
+      "Cr",
+      "Na",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 304,
+    "category": "trio",
+    "temperature": 10454.545454545456,
+    "electron_density": 9.111627561154868e+17,
+    "base_elements": [
+      "Ca",
+      "O",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 305,
+    "category": "trio",
+    "temperature": 9141.414141414141,
+    "electron_density": 2154434690031886.8,
+    "base_elements": [
+      "Ca",
+      "Cl",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 306,
+    "category": "trio",
+    "temperature": 7929.292929292929,
+    "electron_density": 305385550883341.25,
+    "base_elements": [
+      "Mn",
+      "O",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 307,
+    "category": "trio",
+    "temperature": 6212.121212121212,
+    "electron_density": 486260158006535.3,
+    "base_elements": [
+      "Co",
+      "N",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 308,
+    "category": "trio",
+    "temperature": 8131.313131313131,
+    "electron_density": 6.89261210434968e+17,
+    "base_elements": [
+      "Cr",
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 309,
+    "category": "trio",
+    "temperature": 14898.9898989899,
+    "electron_density": 3430469286314926.0,
+    "base_elements": [
+      "Al",
+      "Ca",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 310,
+    "category": "trio",
+    "temperature": 9545.454545454544,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Mn",
+      "Na",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 311,
+    "category": "trio",
+    "temperature": 11161.616161616163,
+    "electron_density": 5.2140082879996736e+17,
+    "base_elements": [
+      "Al",
+      "Cr",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 312,
+    "category": "trio",
+    "temperature": 11161.616161616163,
+    "electron_density": 1.8307382802953696e+16,
+    "base_elements": [
+      "C",
+      "Cl",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 313,
+    "category": "trio",
+    "temperature": 6515.151515151515,
+    "electron_density": 1.6681005372000558e+16,
+    "base_elements": [
+      "N",
+      "Na",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 314,
+    "category": "trio",
+    "temperature": 5909.090909090909,
+    "electron_density": 1484968262254463.5,
+    "base_elements": [
+      "C",
+      "Mn",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 315,
+    "category": "trio",
+    "temperature": 7424.242424242424,
+    "electron_density": 2.2570197196339168e+17,
+    "base_elements": [
+      "C",
+      "Ca",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 316,
+    "category": "trio",
+    "temperature": 5404.040404040404,
+    "electron_density": 3.853528593710519e+16,
+    "base_elements": [
+      "Al",
+      "Mn",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 317,
+    "category": "trio",
+    "temperature": 14393.939393939394,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "Cl",
+      "N",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 318,
+    "category": "trio",
+    "temperature": 5202.020202020202,
+    "electron_density": 5994842503189421.0,
+    "base_elements": [
+      "Al",
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 319,
+    "category": "trio",
+    "temperature": 6313.131313131313,
+    "electron_density": 1484968262254463.5,
+    "base_elements": [
+      "N",
+      "Na",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 320,
+    "category": "trio",
+    "temperature": 11767.676767676767,
+    "electron_density": 486260158006535.3,
+    "base_elements": [
+      "Al",
+      "N",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 321,
+    "category": "trio",
+    "temperature": 11161.616161616163,
+    "electron_density": 2848035868435805.0,
+    "base_elements": [
+      "Cl",
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 322,
+    "category": "trio",
+    "temperature": 7424.242424242424,
+    "electron_density": 7924828983539186.0,
+    "base_elements": [
+      "Ar",
+      "Cr",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 323,
+    "category": "trio",
+    "temperature": 11464.646464646465,
+    "electron_density": 1.2618568830660184e+16,
+    "base_elements": [
+      "C",
+      "Ni",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 324,
+    "category": "trio",
+    "temperature": 12878.78787878788,
+    "electron_density": 8.11130830789689e+16,
+    "base_elements": [
+      "Al",
+      "Ca",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 325,
+    "category": "trio",
+    "temperature": 6414.141414141414,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "Al",
+      "Cl",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 326,
+    "category": "trio",
+    "temperature": 13787.878787878788,
+    "electron_density": 5.094138014816365e+16,
+    "base_elements": [
+      "Ca",
+      "Co",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 327,
+    "category": "trio",
+    "temperature": 6111.111111111111,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Al",
+      "Co",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 328,
+    "category": "trio",
+    "temperature": 8636.363636363636,
+    "electron_density": 2.6560877829466948e+16,
+    "base_elements": [
+      "C",
+      "N",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 329,
+    "category": "trio",
+    "temperature": 9242.424242424242,
+    "electron_density": 6.135907273413188e+16,
+    "base_elements": [
+      "Ca",
+      "Mn",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 330,
+    "category": "trio",
+    "temperature": 8838.383838383837,
+    "electron_density": 1.6681005372000558e+16,
+    "base_elements": [
+      "Ca",
+      "Na",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 331,
+    "category": "trio",
+    "temperature": 11262.626262626261,
+    "electron_density": 6579332246575682.0,
+    "base_elements": [
+      "Cl",
+      "N",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 332,
+    "category": "trio",
+    "temperature": 13787.878787878788,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "Ar",
+      "Cl",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 333,
+    "category": "trio",
+    "temperature": 11161.616161616163,
+    "electron_density": 1.1768119524350038e+17,
+    "base_elements": [
+      "C",
+      "Co",
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 334,
+    "category": "trio",
+    "temperature": 14797.979797979799,
+    "electron_density": 932603346883218.0,
+    "base_elements": [
+      "Cr",
+      "N",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 335,
+    "category": "trio",
+    "temperature": 12070.70707070707,
+    "electron_density": 1.1497569953977404e+16,
+    "base_elements": [
+      "Cl",
+      "Fe",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 336,
+    "category": "trio",
+    "temperature": 5303.030303030303,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Fe",
+      "N",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 337,
+    "category": "trio",
+    "temperature": 12171.717171717171,
+    "electron_density": 585702081805667.4,
+    "base_elements": [
+      "Ar",
+      "Fe",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 338,
+    "category": "trio",
+    "temperature": 14292.929292929293,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "Ar",
+      "Cr",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 339,
+    "category": "trio",
+    "temperature": 10353.535353535353,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": [
+      "Ar",
+      "Cr",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 340,
+    "category": "trio",
+    "temperature": 14797.979797979799,
+    "electron_density": 1.8307382802953696e+16,
+    "base_elements": [
+      "Al",
+      "Fe",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 341,
+    "category": "trio",
+    "temperature": 13989.89898989899,
+    "electron_density": 4132012400115334.5,
+    "base_elements": [
+      "Mn",
+      "N",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 342,
+    "category": "trio",
+    "temperature": 5202.020202020202,
+    "electron_density": 159228279334109.38,
+    "base_elements": [
+      "Ca",
+      "S",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 343,
+    "category": "trio",
+    "temperature": 5404.040404040404,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Mn",
+      "Na",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 344,
+    "category": "trio",
+    "temperature": 10353.535353535353,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "C",
+      "Cl",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 345,
+    "category": "trio",
+    "temperature": 13686.868686868687,
+    "electron_density": 8697490026177834.0,
+    "base_elements": [
+      "Co",
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 346,
+    "category": "trio",
+    "temperature": 5808.080808080808,
+    "electron_density": 9.111627561154868e+17,
+    "base_elements": [
+      "Mg",
+      "Mn",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 347,
+    "category": "trio",
+    "temperature": 6919.191919191919,
+    "electron_density": 2.6560877829466948e+16,
+    "base_elements": [
+      "Ar",
+      "Ca",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 348,
+    "category": "trio",
+    "temperature": 8434.343434343435,
+    "electron_density": 9545484566618328.0,
+    "base_elements": [
+      "C",
+      "Ca",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 349,
+    "category": "trio",
+    "temperature": 13181.818181818182,
+    "electron_density": 2.9150530628251696e+16,
+    "base_elements": [
+      "Co",
+      "Fe",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 350,
+    "category": "trio",
+    "temperature": 6616.161616161617,
+    "electron_density": 3.274549162877732e+17,
+    "base_elements": [
+      "N",
+      "Ni",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 351,
+    "category": "trio",
+    "temperature": 5202.020202020202,
+    "electron_density": 1788649529057435.0,
+    "base_elements": [
+      "C",
+      "Co",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 352,
+    "category": "trio",
+    "temperature": 14898.9898989899,
+    "electron_density": 305385550883341.25,
+    "base_elements": [
+      "Co",
+      "Fe",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 353,
+    "category": "trio",
+    "temperature": 13888.888888888889,
+    "electron_density": 8.11130830789689e+16,
+    "base_elements": [
+      "C",
+      "Cr",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 354,
+    "category": "trio",
+    "temperature": 11767.676767676767,
+    "electron_density": 335160265093884.75,
+    "base_elements": [
+      "Al",
+      "Ar",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 355,
+    "category": "trio",
+    "temperature": 14797.979797979799,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "Co",
+      "Fe",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 356,
+    "category": "trio",
+    "temperature": 10555.555555555555,
+    "electron_density": 4.641588833612791e+16,
+    "base_elements": [
+      "C",
+      "Mn",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 357,
+    "category": "trio",
+    "temperature": 14191.919191919193,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Cr",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 358,
+    "category": "trio",
+    "temperature": 5808.080808080808,
+    "electron_density": 4.641588833612791e+16,
+    "base_elements": [
+      "Ar",
+      "Co",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 359,
+    "category": "trio",
+    "temperature": 7424.242424242424,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "Al",
+      "Fe",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 360,
+    "category": "trio",
+    "temperature": 12575.757575757576,
+    "electron_density": 4534878508128591.0,
+    "base_elements": [
+      "Cl",
+      "Ni",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 361,
+    "category": "trio",
+    "temperature": 5808.080808080808,
+    "electron_density": 1.4174741629268077e+17,
+    "base_elements": [
+      "Ca",
+      "Fe",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 362,
+    "category": "trio",
+    "temperature": 8939.39393939394,
+    "electron_density": 932603346883218.0,
+    "base_elements": [
+      "Mg",
+      "Mn",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 363,
+    "category": "trio",
+    "temperature": 5404.040404040404,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "C",
+      "Ni",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 364,
+    "category": "trio",
+    "temperature": 10858.585858585859,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "N",
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 365,
+    "category": "trio",
+    "temperature": 13787.878787878788,
+    "electron_density": 1.4174741629268077e+17,
+    "base_elements": [
+      "Cl",
+      "Mn",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 366,
+    "category": "trio",
+    "temperature": 8737.373737373737,
+    "electron_density": 7.390722033525776e+16,
+    "base_elements": [
+      "C",
+      "Co",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 367,
+    "category": "trio",
+    "temperature": 5404.040404040404,
+    "electron_density": 7924828983539186.0,
+    "base_elements": [
+      "Co",
+      "Cr",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 368,
+    "category": "trio",
+    "temperature": 13989.89898989899,
+    "electron_density": 486260158006535.3,
+    "base_elements": [
+      "C",
+      "Ni",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 369,
+    "category": "trio",
+    "temperature": 11969.69696969697,
+    "electron_density": 2848035868435805.0,
+    "base_elements": [
+      "Ar",
+      "Mn",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 370,
+    "category": "trio",
+    "temperature": 10959.59595959596,
+    "electron_density": 7924828983539186.0,
+    "base_elements": [
+      "Ca",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 371,
+    "category": "trio",
+    "temperature": 12676.767676767677,
+    "electron_density": 1232846739442068.5,
+    "base_elements": [
+      "Co",
+      "N",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 372,
+    "category": "trio",
+    "temperature": 11868.68686868687,
+    "electron_density": 1.1768119524350038e+17,
+    "base_elements": [
+      "Al",
+      "Na",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 373,
+    "category": "trio",
+    "temperature": 13080.808080808081,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "C",
+      "Cl",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 374,
+    "category": "trio",
+    "temperature": 9444.444444444445,
+    "electron_density": 6.89261210434968e+17,
+    "base_elements": [
+      "Ca",
+      "O",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 375,
+    "category": "trio",
+    "temperature": 11161.616161616163,
+    "electron_density": 5.2140082879996736e+17,
+    "base_elements": [
+      "Fe",
+      "Na",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 376,
+    "category": "trio",
+    "temperature": 10757.575757575758,
+    "electron_density": 4.641588833612791e+16,
+    "base_elements": [
+      "Ca",
+      "Mn",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 377,
+    "category": "trio",
+    "temperature": 10555.555555555555,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Fe",
+      "Ni",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 378,
+    "category": "trio",
+    "temperature": 14797.979797979799,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "C",
+      "Na",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 379,
+    "category": "trio",
+    "temperature": 14090.90909090909,
+    "electron_density": 1.1768119524350038e+17,
+    "base_elements": [
+      "C",
+      "Na",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 380,
+    "category": "trio",
+    "temperature": 8232.323232323233,
+    "electron_density": 159228279334109.38,
+    "base_elements": [
+      "Al",
+      "C",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 381,
+    "category": "trio",
+    "temperature": 13787.878787878788,
+    "electron_density": 533669923120630.2,
+    "base_elements": [
+      "Ni",
+      "S",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 382,
+    "category": "trio",
+    "temperature": 12979.797979797979,
+    "electron_density": 3764935806792471.0,
+    "base_elements": [
+      "Cl",
+      "Cr",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 383,
+    "category": "trio",
+    "temperature": 14191.919191919193,
+    "electron_density": 7.56463327554629e+17,
+    "base_elements": [
+      "C",
+      "Mg",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 384,
+    "category": "trio",
+    "temperature": 10858.585858585859,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "Al",
+      "Ar",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 385,
+    "category": "trio",
+    "temperature": 9747.474747474747,
+    "electron_density": 4132012400115334.5,
+    "base_elements": [
+      "Fe",
+      "N",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 386,
+    "category": "trio",
+    "temperature": 6212.121212121212,
+    "electron_density": 5994842503189421.0,
+    "base_elements": [
+      "Al",
+      "Cl",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 387,
+    "category": "trio",
+    "temperature": 13888.888888888889,
+    "electron_density": 1.2618568830660184e+16,
+    "base_elements": [
+      "Mg",
+      "O",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 388,
+    "category": "trio",
+    "temperature": 9141.414141414141,
+    "electron_density": 1e+18,
+    "base_elements": [
+      "Co",
+      "Ni",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 389,
+    "category": "trio",
+    "temperature": 11262.626262626261,
+    "electron_density": 1123324032978026.5,
+    "base_elements": [
+      "C",
+      "Mn",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 390,
+    "category": "trio",
+    "temperature": 8737.373737373737,
+    "electron_density": 2.420128264794383e+16,
+    "base_elements": [
+      "C",
+      "Ca",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 391,
+    "category": "trio",
+    "temperature": 5606.060606060606,
+    "electron_density": 145082877849593.72,
+    "base_elements": [
+      "Mg",
+      "S",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 392,
+    "category": "trio",
+    "temperature": 9444.444444444445,
+    "electron_density": 2.009233002565054e+16,
+    "base_elements": [
+      "Ca",
+      "Mg",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 393,
+    "category": "trio",
+    "temperature": 8030.30303030303,
+    "electron_density": 774263682681127.8,
+    "base_elements": [
+      "Ar",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 394,
+    "category": "trio",
+    "temperature": 9141.414141414141,
+    "electron_density": 231012970008315.8,
+    "base_elements": [
+      "N",
+      "Ni",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 395,
+    "category": "trio",
+    "temperature": 8131.313131313131,
+    "electron_density": 1.2618568830660184e+16,
+    "base_elements": [
+      "Ar",
+      "Mg",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 396,
+    "category": "trio",
+    "temperature": 7929.292929292929,
+    "electron_density": 3430469286314926.0,
+    "base_elements": [
+      "Mn",
+      "Ni",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 397,
+    "category": "trio",
+    "temperature": 8030.30303030303,
+    "electron_density": 1.873817422860387e+17,
+    "base_elements": [
+      "C",
+      "Co",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 398,
+    "category": "trio",
+    "temperature": 15000.0,
+    "electron_density": 109749876549305.45,
+    "base_elements": [
+      "Ni",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 399,
+    "category": "trio",
+    "temperature": 12777.777777777777,
+    "electron_density": 1.1768119524350038e+17,
+    "base_elements": [
+      "Ar",
+      "Ca",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 400,
+    "category": "trio",
+    "temperature": 14292.929292929293,
+    "electron_density": 278255940220712.6,
+    "base_elements": [
+      "Mn",
+      "S",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 401,
+    "category": "trio",
+    "temperature": 8838.383838383837,
+    "electron_density": 4.229242874389499e+16,
+    "base_elements": [
+      "Al",
+      "N",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 402,
+    "category": "trio",
+    "temperature": 14595.959595959595,
+    "electron_density": 305385550883341.25,
+    "base_elements": [
+      "Mn",
+      "S",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 403,
+    "category": "trio",
+    "temperature": 9545.454545454544,
+    "electron_density": 1123324032978026.5,
+    "base_elements": [
+      "Na",
+      "Ni",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 404,
+    "category": "trio",
+    "temperature": 6616.161616161617,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "Al",
+      "Ca",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 405,
+    "category": "trio",
+    "temperature": 14797.979797979799,
+    "electron_density": 2.420128264794383e+16,
+    "base_elements": [
+      "Ca",
+      "Cl",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 406,
+    "category": "trio",
+    "temperature": 11363.636363636364,
+    "electron_density": 3.274549162877732e+17,
+    "base_elements": [
+      "Cl",
+      "Ni",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 407,
+    "category": "trio",
+    "temperature": 8434.343434343435,
+    "electron_density": 6.135907273413188e+16,
+    "base_elements": [
+      "Al",
+      "Ca",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 408,
+    "category": "trio",
+    "temperature": 13282.828282828283,
+    "electron_density": 1484968262254463.5,
+    "base_elements": [
+      "Fe",
+      "S",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 409,
+    "category": "trio",
+    "temperature": 12070.70707070707,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": [
+      "Ca",
+      "N",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 410,
+    "category": "trio",
+    "temperature": 14595.959595959595,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "Ar",
+      "Ca",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 411,
+    "category": "trio",
+    "temperature": 11262.626262626261,
+    "electron_density": 1232846739442068.5,
+    "base_elements": [
+      "Al",
+      "Mn",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 412,
+    "category": "trio",
+    "temperature": 10959.59595959596,
+    "electron_density": 1.4174741629268077e+17,
+    "base_elements": [
+      "C",
+      "Na",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 413,
+    "category": "trio",
+    "temperature": 14393.939393939394,
+    "electron_density": 2848035868435805.0,
+    "base_elements": [
+      "Ca",
+      "Co",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 414,
+    "category": "trio",
+    "temperature": 14292.929292929293,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "Cl",
+      "Mg",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 415,
+    "category": "trio",
+    "temperature": 11767.676767676767,
+    "electron_density": 585702081805667.4,
+    "base_elements": [
+      "Ar",
+      "Cr",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 416,
+    "category": "trio",
+    "temperature": 14595.959595959595,
+    "electron_density": 1e+18,
+    "base_elements": [
+      "Ar",
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 417,
+    "category": "trio",
+    "temperature": 11767.676767676767,
+    "electron_density": 4.328761281083062e+17,
+    "base_elements": [
+      "Ar",
+      "Ca",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 418,
+    "category": "trio",
+    "temperature": 11363.636363636364,
+    "electron_density": 443062145758388.7,
+    "base_elements": [
+      "Cr",
+      "Ni",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 419,
+    "category": "trio",
+    "temperature": 6111.111111111111,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "Ca",
+      "N",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 420,
+    "category": "complex",
+    "temperature": 6616.161616161617,
+    "electron_density": 231012970008315.8,
+    "base_elements": [
+      "Ti",
+      "Mg",
+      "O",
+      "C",
+      "Cl",
+      "Fe",
+      "Ni",
+      "Co",
+      "Ar",
+      "Na",
+      "Al",
+      "Si",
+      "Mn",
+      "Ca",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 421,
+    "category": "complex",
+    "temperature": 11464.646464646465,
+    "electron_density": 705480231071863.1,
+    "base_elements": [
+      "Na",
+      "C",
+      "Ni",
+      "Cr",
+      "Al",
+      "Cl",
+      "Mg",
+      "Ar",
+      "Fe",
+      "Co",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 422,
+    "category": "complex",
+    "temperature": 13181.818181818182,
+    "electron_density": 9545484566618328.0,
+    "base_elements": [
+      "Mg",
+      "Ni",
+      "O",
+      "N",
+      "Co",
+      "Ar",
+      "S",
+      "Ca",
+      "Fe",
+      "Al",
+      "Cl",
+      "Cr",
+      "C",
+      "Na",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 423,
+    "category": "complex",
+    "temperature": 11363.636363636364,
+    "electron_density": 7220809018385456.0,
+    "base_elements": [
+      "C",
+      "S",
+      "Si",
+      "Na",
+      "Cl",
+      "N",
+      "Cr",
+      "Ar",
+      "Ti",
+      "Al",
+      "Fe",
+      "Mg",
+      "Ca",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 424,
+    "category": "complex",
+    "temperature": 12575.757575757576,
+    "electron_density": 2595024211399742.5,
+    "base_elements": [
+      "Ca",
+      "Fe",
+      "S",
+      "Mg",
+      "C",
+      "Cr",
+      "Si",
+      "Co",
+      "O",
+      "Na",
+      "Cl",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 425,
+    "category": "complex",
+    "temperature": 14898.9898989899,
+    "electron_density": 1.1497569953977404e+16,
+    "base_elements": [
+      "Cl",
+      "O",
+      "N",
+      "Ar",
+      "Fe",
+      "Mn",
+      "Cr",
+      "Ti",
+      "Al",
+      "Co",
+      "Si",
+      "Ca",
+      "Ni",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 426,
+    "category": "complex",
+    "temperature": 12575.757575757576,
+    "electron_density": 174752840000768.28,
+    "base_elements": [
+      "Na",
+      "Ca",
+      "N",
+      "Co",
+      "Mg",
+      "S",
+      "O",
+      "Al",
+      "Cr",
+      "Cl",
+      "Ar",
+      "Mn",
+      "Si",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 427,
+    "category": "complex",
+    "temperature": 6010.101010101011,
+    "electron_density": 1963040650040268.2,
+    "base_elements": [
+      "Cr",
+      "Al",
+      "Si",
+      "Ni",
+      "Co",
+      "Ca",
+      "C",
+      "Mn",
+      "Na",
+      "Ar",
+      "Ti",
+      "Cl",
+      "Fe",
+      "O",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 428,
+    "category": "complex",
+    "temperature": 12878.78787878788,
+    "electron_density": 1788649529057435.0,
+    "base_elements": [
+      "N",
+      "Cl",
+      "Ni",
+      "Mn",
+      "Al",
+      "Si",
+      "C",
+      "Ti",
+      "Mg",
+      "Na",
+      "Cr",
+      "Ar"
+    ]
+  },
+  {
+    "sample_id": 429,
+    "category": "complex",
+    "temperature": 12474.747474747473,
+    "electron_density": 2.009233002565054e+16,
+    "base_elements": [
+      "Ca",
+      "Al",
+      "C",
+      "Si",
+      "Co",
+      "Ti",
+      "Mn",
+      "Ni",
+      "O",
+      "S",
+      "Fe",
+      "Mg",
+      "Ar",
+      "Na",
+      "Cr",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 430,
+    "category": "complex",
+    "temperature": 7525.252525252525,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": [
+      "C",
+      "Si",
+      "Fe",
+      "Ni",
+      "Co",
+      "Mg",
+      "Mn",
+      "Ar",
+      "S",
+      "Ca",
+      "Cl",
+      "Al",
+      "Cr",
+      "Ti",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 431,
+    "category": "complex",
+    "temperature": 14797.979797979799,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "Al",
+      "Ar",
+      "Fe",
+      "O",
+      "Cr",
+      "Ni",
+      "N",
+      "Si",
+      "S",
+      "Mg",
+      "Ti",
+      "Na",
+      "C"
+    ]
+  },
+  {
+    "sample_id": 432,
+    "category": "complex",
+    "temperature": 13080.808080808081,
+    "electron_density": 9.111627561154868e+17,
+    "base_elements": [
+      "Cl",
+      "C",
+      "Si",
+      "Ti",
+      "Mn",
+      "N",
+      "Ni",
+      "Mg",
+      "Co",
+      "Cr",
+      "O",
+      "Fe",
+      "S",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 433,
+    "category": "complex",
+    "temperature": 8838.383838383837,
+    "electron_density": 367837977182863.44,
+    "base_elements": [
+      "Ti",
+      "O",
+      "Ar",
+      "Ni",
+      "Na",
+      "S",
+      "N",
+      "Mg",
+      "Ca",
+      "Cr",
+      "Mn",
+      "Si",
+      "Fe",
+      "C",
+      "Co",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 434,
+    "category": "complex",
+    "temperature": 7828.282828282829,
+    "electron_density": 1353047774579807.5,
+    "base_elements": [
+      "O",
+      "Ca",
+      "Co",
+      "Cr",
+      "S",
+      "N",
+      "Cl",
+      "Ni",
+      "C",
+      "Fe",
+      "Al",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 435,
+    "category": "complex",
+    "temperature": 8131.313131313131,
+    "electron_density": 109749876549305.45,
+    "base_elements": [
+      "C",
+      "Ti",
+      "Cr",
+      "Ar",
+      "Na",
+      "Ni",
+      "Co",
+      "Si",
+      "Mg",
+      "Al",
+      "Cl",
+      "S",
+      "N",
+      "Mn",
+      "Ca",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 436,
+    "category": "complex",
+    "temperature": 12777.777777777777,
+    "electron_density": 2.2570197196339168e+17,
+    "base_elements": [
+      "O",
+      "Na",
+      "Ti",
+      "N",
+      "Ni",
+      "Cr",
+      "Al",
+      "Cl",
+      "Mn",
+      "Co",
+      "S",
+      "Mg",
+      "Fe",
+      "Ar",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 437,
+    "category": "complex",
+    "temperature": 12474.747474747473,
+    "electron_density": 1123324032978026.5,
+    "base_elements": [
+      "Si",
+      "Fe",
+      "O",
+      "Ar",
+      "Co",
+      "Mg",
+      "Ni",
+      "S",
+      "Cl",
+      "Ca",
+      "Cr",
+      "Ti"
+    ]
+  },
+  {
+    "sample_id": 438,
+    "category": "complex",
+    "temperature": 13080.808080808081,
+    "electron_density": 1.6681005372000558e+16,
+    "base_elements": [
+      "Al",
+      "Mg",
+      "Ti",
+      "C",
+      "Cl",
+      "Na",
+      "Ni",
+      "Co",
+      "Mn",
+      "S",
+      "Ar",
+      "Cr",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 439,
+    "category": "complex",
+    "temperature": 14292.929292929293,
+    "electron_density": 642807311728431.9,
+    "base_elements": [
+      "Ni",
+      "C",
+      "Si",
+      "Na",
+      "N",
+      "Al",
+      "Ar",
+      "Mg",
+      "Ca",
+      "Cr",
+      "Mn",
+      "Fe",
+      "S",
+      "Ti",
+      "Co",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 440,
+    "category": "complex",
+    "temperature": 12979.797979797979,
+    "electron_density": 2.2051307399030412e+16,
+    "base_elements": [
+      "N",
+      "C",
+      "S",
+      "Al",
+      "Si",
+      "Ni",
+      "Mn",
+      "O",
+      "Ar",
+      "Cl",
+      "Ca",
+      "Co",
+      "Cr"
+    ]
+  },
+  {
+    "sample_id": 441,
+    "category": "complex",
+    "temperature": 5505.050505050505,
+    "electron_density": 533669923120630.2,
+    "base_elements": [
+      "Si",
+      "S",
+      "Cr",
+      "Cl",
+      "Ca",
+      "Mg",
+      "Ar",
+      "Co",
+      "Ti",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 442,
+    "category": "complex",
+    "temperature": 11868.68686868687,
+    "electron_density": 120450354025878.36,
+    "base_elements": [
+      "Mn",
+      "Si",
+      "Mg",
+      "N",
+      "Cl",
+      "Al",
+      "Ca",
+      "Cr",
+      "Na",
+      "S",
+      "Ar",
+      "C"
+    ]
+  },
+  {
+    "sample_id": 443,
+    "category": "complex",
+    "temperature": 5000.0,
+    "electron_density": 2.009233002565054e+16,
+    "base_elements": [
+      "Cr",
+      "Cl",
+      "Ni",
+      "Si",
+      "O",
+      "Co",
+      "Ar",
+      "Al",
+      "Fe",
+      "Ti",
+      "N",
+      "Mg",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 444,
+    "category": "complex",
+    "temperature": 8737.373737373737,
+    "electron_density": 367837977182863.44,
+    "base_elements": [
+      "Fe",
+      "Na",
+      "Ar",
+      "Cr",
+      "Si",
+      "Al",
+      "O",
+      "Ni",
+      "Ti",
+      "S",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 445,
+    "category": "complex",
+    "temperature": 11060.60606060606,
+    "electron_density": 2364489412645407.0,
+    "base_elements": [
+      "N",
+      "O",
+      "Mn",
+      "Cr",
+      "Na",
+      "Ti",
+      "Si",
+      "Cl",
+      "Ar",
+      "Ni",
+      "Al",
+      "C",
+      "Mg",
+      "Ca",
+      "Co",
+      "S",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 446,
+    "category": "complex",
+    "temperature": 7424.242424242424,
+    "electron_density": 849753435908643.9,
+    "base_elements": [
+      "O",
+      "Ca",
+      "Si",
+      "Cr",
+      "Mn",
+      "Ti",
+      "Mg",
+      "Ar",
+      "Na",
+      "Cl",
+      "Co",
+      "C",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 447,
+    "category": "complex",
+    "temperature": 6717.171717171717,
+    "electron_density": 367837977182863.44,
+    "base_elements": [
+      "N",
+      "Co",
+      "Ar",
+      "Mg",
+      "Ti",
+      "S",
+      "O",
+      "Ni",
+      "Ca",
+      "Si",
+      "C",
+      "Fe",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 448,
+    "category": "complex",
+    "temperature": 12979.797979797979,
+    "electron_density": 1123324032978026.5,
+    "base_elements": [
+      "Fe",
+      "Ca",
+      "C",
+      "Cl",
+      "Si",
+      "S",
+      "Mn",
+      "Na",
+      "Ar",
+      "N",
+      "Cr",
+      "Co",
+      "Ni",
+      "O",
+      "Ti",
+      "Mg",
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 449,
+    "category": "complex",
+    "temperature": 10959.59595959596,
+    "electron_density": 6579332246575682.0,
+    "base_elements": [
+      "N",
+      "Cl",
+      "Fe",
+      "Ar",
+      "S",
+      "Ni",
+      "Ti",
+      "Si",
+      "Mn",
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 450,
+    "category": "complex",
+    "temperature": 6616.161616161617,
+    "electron_density": 5.2140082879996736e+17,
+    "base_elements": [
+      "Na",
+      "C",
+      "Cl",
+      "Fe",
+      "O",
+      "Al",
+      "Ti",
+      "Co",
+      "S",
+      "Ar",
+      "Mn",
+      "N",
+      "Mg",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 451,
+    "category": "complex",
+    "temperature": 5707.070707070707,
+    "electron_density": 1.4174741629268077e+17,
+    "base_elements": [
+      "S",
+      "Ar",
+      "Fe",
+      "Ni",
+      "Mn",
+      "N",
+      "Ca",
+      "Co",
+      "Ti",
+      "C",
+      "Al",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 452,
+    "category": "complex",
+    "temperature": 9545.454545454544,
+    "electron_density": 9545484566618328.0,
+    "base_elements": [
+      "Ca",
+      "N",
+      "Na",
+      "Ar",
+      "Mg",
+      "Si",
+      "C",
+      "Al",
+      "Ti",
+      "Fe",
+      "Ni",
+      "Cl",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 453,
+    "category": "complex",
+    "temperature": 12070.70707070707,
+    "electron_density": 120450354025878.36,
+    "base_elements": [
+      "Co",
+      "Na",
+      "Ti",
+      "Cl",
+      "Cr",
+      "Ni",
+      "S",
+      "Mn",
+      "Al",
+      "N",
+      "Mg",
+      "C",
+      "Si",
+      "Ca"
+    ]
+  },
+  {
+    "sample_id": 454,
+    "category": "complex",
+    "temperature": 11363.636363636364,
+    "electron_density": 5462277217684337.0,
+    "base_elements": [
+      "Mn",
+      "Mg",
+      "Na",
+      "O",
+      "N",
+      "Ti",
+      "C",
+      "Co",
+      "Ar",
+      "Ni",
+      "Fe",
+      "Cr",
+      "Ca",
+      "Si"
+    ]
+  },
+  {
+    "sample_id": 455,
+    "category": "complex",
+    "temperature": 7323.232323232323,
+    "electron_density": 2.420128264794383e+16,
+    "base_elements": [
+      "C",
+      "Mn",
+      "Mg",
+      "Cr",
+      "N",
+      "Co",
+      "Ti",
+      "S",
+      "Ar",
+      "O",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 456,
+    "category": "complex",
+    "temperature": 5202.020202020202,
+    "electron_density": 585702081805667.4,
+    "base_elements": [
+      "Na",
+      "Al",
+      "Co",
+      "Cl",
+      "C",
+      "Ca",
+      "S",
+      "Fe",
+      "Ti",
+      "Mg",
+      "Ar",
+      "Cr",
+      "Si",
+      "Ni",
+      "O"
+    ]
+  },
+  {
+    "sample_id": 457,
+    "category": "complex",
+    "temperature": 6414.141414141414,
+    "electron_density": 932603346883218.0,
+    "base_elements": [
+      "Ti",
+      "Ar",
+      "N",
+      "Co",
+      "Ni",
+      "Mn",
+      "C",
+      "Na",
+      "Cr",
+      "S",
+      "Si",
+      "Mg",
+      "Cl",
+      "O",
+      "Fe"
+    ]
+  },
+  {
+    "sample_id": 458,
+    "category": "complex",
+    "temperature": 12777.777777777777,
+    "electron_density": 6.734150657750856e+16,
+    "base_elements": [
+      "S",
+      "Ar",
+      "Cr",
+      "Co",
+      "N",
+      "Na",
+      "Ca",
+      "Fe",
+      "Cl",
+      "Mn"
+    ]
+  },
+  {
+    "sample_id": 459,
+    "category": "complex",
+    "temperature": 13383.838383838383,
+    "electron_density": 1e+18,
+    "base_elements": [
+      "Fe",
+      "Ti",
+      "Cl",
+      "Ni",
+      "O",
+      "Si",
+      "Ca",
+      "Co",
+      "Na",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 460,
+    "category": "complex",
+    "temperature": 8737.373737373737,
+    "electron_density": 7924828983539186.0,
+    "base_elements": [
+      "Mn",
+      "Ni",
+      "Mg",
+      "S",
+      "Cr",
+      "C",
+      "Ca",
+      "Ti",
+      "Na",
+      "Cl"
+    ]
+  },
+  {
+    "sample_id": 461,
+    "category": "complex",
+    "temperature": 10959.59595959596,
+    "electron_density": 3.1992671377973844e+16,
+    "base_elements": [
+      "Ar",
+      "Si",
+      "O",
+      "Co",
+      "Mg",
+      "Ti",
+      "Ni",
+      "Na",
+      "Cl",
+      "Mn",
+      "Cr",
+      "Fe",
+      "C",
+      "Ca",
+      "N"
+    ]
+  },
+  {
+    "sample_id": 462,
+    "category": "complex",
+    "temperature": 5101.010101010101,
+    "electron_density": 3.274549162877732e+17,
+    "base_elements": [
+      "Cl",
+      "O",
+      "Ar",
+      "Ca",
+      "Fe",
+      "Co",
+      "Al",
+      "Cr",
+      "N",
+      "Mn",
+      "Ti",
+      "C",
+      "S",
+      "Si",
+      "Mg",
+      "Ni",
+      "Na"
+    ]
+  },
+  {
+    "sample_id": 463,
+    "category": "complex",
+    "temperature": 6010.101010101011,
+    "electron_density": 3.5111917342151416e+16,
+    "base_elements": [
+      "Al",
+      "N",
+      "S",
+      "Ar",
+      "Na",
+      "Si",
+      "Co",
+      "C",
+      "Mn",
+      "Ti",
+      "Mg",
+      "Ca",
+      "O",
+      "Ni"
+    ]
+  },
+  {
+    "sample_id": 464,
+    "category": "complex",
+    "temperature": 13080.808080808081,
+    "electron_density": 7.390722033525776e+16,
+    "base_elements": [
+      "S",
+      "Al",
+      "Ti",
+      "Ar",
+      "Si",
+      "Cl",
+      "Ca",
+      "C",
+      "Mg",
+      "Cr",
+      "Ni",
+      "Mn",
+      "O",
+      "Co"
+    ]
+  },
+  {
+    "sample_id": 465,
+    "category": "complex",
+    "temperature": 6717.171717171717,
+    "electron_density": 5.72236765935022e+17,
+    "base_elements": [
+      "Ca",
+      "Ar",
+      "Ti",
+      "Cr",
+      "N",
+      "Mn",
+      "Fe",
+      "Si",
+      "Na",
+      "Ni",
+      "Cl",
+      "O",
+      "Al",
+      "Mg",
+      "C",
+      "Co",
+      "S"
+    ]
+  },
+  {
+    "sample_id": 466,
+    "category": "complex",
+    "temperature": 13181.818181818182,
+    "electron_density": 6.280291441834272e+17,
+    "base_elements": [
+      "O",
+      "Al",
+      "Mn",
+      "Co",
+      "Ca",
+      "S",
+      "Cr",
+      "C",
+      "Ar",
+      "Ti",
+      "Si",
+      "Cl",
+      "Fe",
+      "N",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 467,
+    "category": "complex",
+    "temperature": 8131.313131313131,
+    "electron_density": 253536449397011.66,
+    "base_elements": [
+      "Si",
+      "Ar",
+      "N",
+      "Cr",
+      "Co",
+      "Cl",
+      "Al",
+      "Ni",
+      "Ti",
+      "Mn",
+      "Mg",
+      "Fe",
+      "S",
+      "C"
+    ]
+  },
+  {
+    "sample_id": 468,
+    "category": "complex",
+    "temperature": 13888.888888888889,
+    "electron_density": 1963040650040268.2,
+    "base_elements": [
+      "Cl",
+      "Ar",
+      "Co",
+      "Mg",
+      "S",
+      "N",
+      "C",
+      "Fe",
+      "Mn",
+      "Na",
+      "Cr",
+      "Si",
+      "Al"
+    ]
+  },
+  {
+    "sample_id": 469,
+    "category": "complex",
+    "temperature": 9040.40404040404,
+    "electron_density": 191791026167249.28,
+    "base_elements": [
+      "S",
+      "Ar",
+      "Cl",
+      "Ca",
+      "Al",
+      "O",
+      "Ni",
+      "Co",
+      "Ti",
+      "Cr",
+      "Fe",
+      "Mg"
+    ]
+  },
+  {
+    "sample_id": 470,
+    "category": "noise",
+    "temperature": 13585.858585858587,
+    "electron_density": 1.0476157527896662e+16,
+    "base_elements": []
+  },
+  {
+    "sample_id": 471,
+    "category": "noise",
+    "temperature": 13787.878787878788,
+    "electron_density": 4132012400115334.5,
+    "base_elements": []
+  },
+  {
+    "sample_id": 472,
+    "category": "noise",
+    "temperature": 6616.161616161617,
+    "electron_density": 1.0722672220103253e+17,
+    "base_elements": []
+  },
+  {
+    "sample_id": 473,
+    "category": "noise",
+    "temperature": 9545.454545454544,
+    "electron_density": 1788649529057435.0,
+    "base_elements": []
+  },
+  {
+    "sample_id": 474,
+    "category": "noise",
+    "temperature": 12878.78787878788,
+    "electron_density": 1.555676143930466e+17,
+    "base_elements": []
+  },
+  {
+    "sample_id": 475,
+    "category": "noise",
+    "temperature": 10353.535353535353,
+    "electron_density": 2.7185882427329514e+17,
+    "base_elements": []
+  },
+  {
+    "sample_id": 476,
+    "category": "noise",
+    "temperature": 14191.919191919193,
+    "electron_density": 585702081805667.4,
+    "base_elements": []
+  },
+  {
+    "sample_id": 477,
+    "category": "noise",
+    "temperature": 8232.323232323233,
+    "electron_density": 8.902150854450357e+16,
+    "base_elements": []
+  },
+  {
+    "sample_id": 478,
+    "category": "noise",
+    "temperature": 8939.39393939394,
+    "electron_density": 1788649529057435.0,
+    "base_elements": []
+  },
+  {
+    "sample_id": 479,
+    "category": "noise",
+    "temperature": 14696.969696969696,
+    "electron_density": 109749876549305.45,
+    "base_elements": []
+  },
+  {
+    "sample_id": 480,
+    "category": "noise",
+    "temperature": 14696.969696969696,
+    "electron_density": 1963040650040268.2,
+    "base_elements": []
+  },
+  {
+    "sample_id": 481,
+    "category": "noise",
+    "temperature": 12676.767676767677,
+    "electron_density": 1484968262254463.5,
+    "base_elements": []
+  },
+  {
+    "sample_id": 482,
+    "category": "noise",
+    "temperature": 8232.323232323233,
+    "electron_density": 1.1768119524350038e+17,
+    "base_elements": []
+  },
+  {
+    "sample_id": 483,
+    "category": "noise",
+    "temperature": 7525.252525252525,
+    "electron_density": 705480231071863.1,
+    "base_elements": []
+  },
+  {
+    "sample_id": 484,
+    "category": "noise",
+    "temperature": 11565.656565656565,
+    "electron_density": 3125715849688235.0,
+    "base_elements": []
+  },
+  {
+    "sample_id": 485,
+    "category": "noise",
+    "temperature": 13989.89898989899,
+    "electron_density": 6579332246575682.0,
+    "base_elements": []
+  },
+  {
+    "sample_id": 486,
+    "category": "noise",
+    "temperature": 6414.141414141414,
+    "electron_density": 8.30217568131977e+17,
+    "base_elements": []
+  },
+  {
+    "sample_id": 487,
+    "category": "noise",
+    "temperature": 9343.434343434343,
+    "electron_density": 8697490026177834.0,
+    "base_elements": []
+  },
+  {
+    "sample_id": 488,
+    "category": "noise",
+    "temperature": 12474.747474747473,
+    "electron_density": 2.6560877829466948e+16,
+    "base_elements": []
+  },
+  {
+    "sample_id": 489,
+    "category": "noise",
+    "temperature": 11666.666666666668,
+    "electron_density": 159228279334109.38,
+    "base_elements": []
+  }
+]

@@ -82,4 +82,4 @@ python /home/bwalidain/birrulwldain/merge.py \
 echo "--- Pekerjaan Penggabungan Selesai ---"
 date
 
-python merge.py --inputs dataset-10-*.h5 --output dataset-10.h5
+python merge.py --inputs dataset-200-*.h5 --output dataset-200.h5

@@ -1,0 +1,93 @@
+\documentclass[10pt,a4paper,twocolumn]{article}%
+\usepackage[T1]{fontenc}%
+\usepackage[utf8]{inputenc}%
+\usepackage{lmodern}%
+\usepackage{textcomp}%
+\usepackage{lastpage}%
+\usepackage{graphicx}%
+\usepackage{amsmath}%
+\usepackage{amssymb}%
+\usepackage{booktabs}%
+\usepackage{hyperref}%
+%
+%
+%
+\begin{document}%
+\normalsize%
+\author{Birrul Wildan}%
+\title{A More Complex PyLaTeX Document Example}%
+\date{\today}%
+\maketitle%
+\section{Abstract}%
+\label{sec:Abstract}%
+This document demonstrates a more complex usage of PyLaTeX, including sections, subsections, figures, tables, lists, and mathematical equations. It serves as an example for generating structured LaTeX documents programmatically.
+
+%
+\section{Introduction}%
+\label{sec:Introduction}%
+Welcome to this advanced PyLaTeX example. We will explore various features to create a rich document.%
+\subsection{Document Structure}%
+\label{subsec:DocumentStructure}%
+LaTeX documents are structured using sections and subsections.
+
+%
+\section{Figures}%
+\label{sec:Figures}%
+Here is an example of including a figure. Please ensure you have an image file named `example{-}image{-}a.png` in the same directory for this to compile correctly, or replace it with an existing image path.%
+
+
+\begin{figure}[h!]%
+\centering%
+\includegraphics[width=0.8\textwidth]{example-image-a.png}%
+\caption{A placeholder image demonstrating figure inclusion.}%
+\label{fig:example\_image}%
+\end{figure}
+
+%
+\section{Tables}%
+\label{sec:Tables}%
+Below is an example of a simple table.%
+\begin{tabular}{c|c|c}%
+\hline%
+Header 1&Header 2&Header 3\\%
+\hline%
+Row 1 Col 1&Row 1 Col 2&Row 1 Col 3\\%
+Row 2 Col 1&Row 2 Col 2&Row 2 Col 3\\%
+\hline%
+\end{tabular}%
+\label{tab:example\_table}
+
+%
+\section{Lists}%
+\label{sec:Lists}%
+Here are some examples of lists:%
+\begin{itemize}%
+\item%
+First item in the list.%
+\item%
+Second item, which is a bit longer to show wrapping.%
+\item%
+Third item.%
+\end{itemize}
+
+%
+\section{Mathematics}%
+\label{sec:Mathematics}%
+We can include inline math like \$E=mc\^{}2\$ or displayed equations:%
+\[ \alpha + \beta = \gamma \]%
+And aligned equations:%
+\begin{alignat}{2}%
+f(x) &= x^2 + 2x + 1 \\%
+     &= (x+1)^2%
+\end{alignat}%
+\label{eq:quadratic}
+
+%
+\section{Conclusion}%
+\label{sec:Conclusion}%
+This document has showcased various features of PyLaTeX. You can refer to Figure ef\{fig:example\_image\} and Table ef\{tab:example\_table\}. Equation ef\{eq:quadratic\} is an example of aligned math.%
+\newline%
+\textit{Happy LaTeXing with Python!}
+
+%
+\end{document}

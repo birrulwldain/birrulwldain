@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.18)  19 JUN 2025 00:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.6.29)  4 JUL 2025 21:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -6,7 +6,7 @@ entering extended mode
 **/Volumes/Data/birrulwldain/spectral_report_v12/spectral_report.tex
 (/Volumes/Data/birrulwldain/spectral_report_v12/spectral_report.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-05-26>
+L3 programming layer <2025-06-09>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/size11.clo
@@ -80,7 +80,7 @@ File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 \Gin@req@height=\dimen170
 \Gin@req@width=\dimen171
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/05/18 v2.17x AMS math features
+Package: amsmath 2025/06/16 v2.17y AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
@@ -275,7 +275,7 @@ LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 19
  (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2025-04-14 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count322
 ) (./spectral_report.aux)
 \openout1 = `spectral_report.aux'.
@@ -354,103 +354,175 @@ Package translations Info: loading dictionary `translations-basic-dictionary' fo
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (./spectral_report.toc)
+ (./spectral_report.toc
+
+[1
+
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}])
 \tf@toc=\write3
 \openout3 = `spectral_report.toc'.
 
 
 
-[1
-
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+[2]
 Overfull \hbox (10.21054pt too wide) in paragraph at lines 55--82
  [][] 
  []
 
-</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1286.png, id=8, 715.7139pt x 426.393pt>
-File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1286.png Graphic file (type png)
-<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1286.png>
-Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1286.png  used on input line 89.
-(pdftex.def)             Requested size: 540.60239pt x 322.07764pt.
-
-
-[2
-
- </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1286.png>]
-Overfull \hbox (10.21054pt too wide) in paragraph at lines 123--150
- [][] 
- []
-
-</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_507.png, id=20, 715.7139pt x 426.393pt>
-File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_507.png Graphic file (type png)
-<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_507.png>
-Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_507.png  used on input line 157.
-(pdftex.def)             Requested size: 540.60239pt x 322.07764pt.
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_14615.png, id=11, 715.7139pt x 425.9112pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_14615.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_14615.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_14615.png  used on input line 89.
+(pdftex.def)             Requested size: 540.60239pt x 321.7137pt.
 
 
 [3
 
- </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_507.png>]
-Overfull \hbox (10.21054pt too wide) in paragraph at lines 191--218
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_14615.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 123--150
  [][] 
  []
 
-</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16160.png, id=25, 715.7139pt x 426.393pt>
-File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16160.png Graphic file (type png)
-<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16160.png>
-Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16160.png  used on input line 225.
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5302.png, id=23, 715.7139pt x 426.393pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5302.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5302.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5302.png  used on input line 157.
 (pdftex.def)             Requested size: 540.60239pt x 322.07764pt.
 
 
 [4
 
- </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16160.png>]
-Overfull \hbox (10.21054pt too wide) in paragraph at lines 259--286
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5302.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 191--218
  [][] 
  []
 
-</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_12253.png, id=30, 715.7139pt x 424.7067pt>
-File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_12253.png Graphic file (type png)
-<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_12253.png>
-Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_12253.png  used on input line 293.
-(pdftex.def)             Requested size: 540.60239pt x 320.80388pt.
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_9016.png, id=28, 715.7139pt x 424.4658pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_9016.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_9016.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_9016.png  used on input line 225.
+(pdftex.def)             Requested size: 540.60239pt x 320.62192pt.
 
 
 [5
 
- </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_12253.png>]
-Overfull \hbox (10.21054pt too wide) in paragraph at lines 327--354
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_9016.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 259--286
  [][] 
  []
 
-</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_3019.png, id=35, 715.7139pt x 426.8748pt>
-File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_3019.png Graphic file (type png)
-<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_3019.png>
-Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_3019.png  used on input line 361.
-(pdftex.def)             Requested size: 540.60239pt x 322.44157pt.
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5605.png, id=33, 715.7139pt x 424.7067pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5605.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5605.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5605.png  used on input line 293.
+(pdftex.def)             Requested size: 540.60239pt x 320.80388pt.
 
 
 [6
 
- </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_3019.png>] (./spectral_report.aux)
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5605.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 327--354
+ [][] 
+ []
+
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8712.png, id=38, 715.7139pt x 427.3566pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8712.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8712.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8712.png  used on input line 361.
+(pdftex.def)             Requested size: 540.60239pt x 322.8055pt.
+
+
+[7
+
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8712.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 395--422
+ [][] 
+ []
+
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5466.png, id=44, 715.7139pt x 427.1157pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5466.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5466.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5466.png  used on input line 429.
+(pdftex.def)             Requested size: 540.60239pt x 322.62354pt.
+
+
+[8
+
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_5466.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 463--490
+ [][] 
+ []
+
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_6992.png, id=49, 715.7139pt x 425.4294pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_6992.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_6992.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_6992.png  used on input line 497.
+(pdftex.def)             Requested size: 540.60239pt x 321.34978pt.
+
+
+[9
+
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_6992.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 531--558
+ [][] 
+ []
+
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8367.png, id=54, 715.7139pt x 424.2249pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8367.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8367.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8367.png  used on input line 565.
+(pdftex.def)             Requested size: 540.60239pt x 320.43996pt.
+
+
+[10
+
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_8367.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 599--626
+ [][] 
+ []
+
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16029.png, id=59, 715.7139pt x 424.9476pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16029.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16029.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16029.png  used on input line 633.
+(pdftex.def)             Requested size: 540.60239pt x 320.98584pt.
+
+
+[11
+
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_16029.png>]
+Overfull \hbox (10.21054pt too wide) in paragraph at lines 667--694
+ [][] 
+ []
+
+</Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1076.png, id=64, 715.7139pt x 426.393pt>
+File: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1076.png Graphic file (type png)
+<use /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1076.png>
+Package pdftex.def Info: /Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1076.png  used on input line 701.
+(pdftex.def)             Requested size: 540.60239pt x 322.07764pt.
+
+
+[12
+
+ </Volumes/Data/birrulwldain/spectral_report_v12/spectrum_1076.png>] (./spectral_report.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-05-26>
+L3 programming layer <2025-06-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8957 strings out of 467886
- 206399 string characters out of 5434039
- 583171 words of memory out of 5000000
- 37445 multiletter control sequences out of 15000+600000
+ 9006 strings out of 467888
+ 209120 string characters out of 5434061
+ 586554 words of memory out of 5000000
+ 37492 multiletter control sequences out of 15000+600000
  645180 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,12n,88p,295b,862s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,12n,88p,296b,862s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on spectral_report.pdf (6 pages, 1658620 bytes).
+Output written on spectral_report.pdf (12 pages, 3526474 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 105 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

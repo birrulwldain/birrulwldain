@@ -1,0 +1,12 @@
+
+torch
+torchvision
+torchaudio
+
+h5py
+numpy
+scikit-learn
+
+matplotlib
+tqdm
+torchmetrics 
