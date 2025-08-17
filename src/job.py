@@ -88,7 +88,7 @@ def setup_logging(base_dir: str, job_id: str = "unknown"):
 
 # Konfigurasi simulasi
 SIMULATION_CONFIG = {
-    "resolution": 4096,
+    "resolution": 24480,
     "wl_range": (200, 900),
     "sigma": 0.1,
     "target_max_intensity": 0.8,
