@@ -1,4 +1,4 @@
-<h1 align="center">Hi, saya Birrul 👋</h1>
+<h1 align="center">Hi, I'm Birrul 👋</h1>
 <h3 align="center">Physics Graduate · LIBS Spectroscopy · HPC & Data Analysis</h3>
 
 <p align="center">
@@ -7,28 +7,28 @@
 
 ---
 
-## 🧑‍💻 Tentang Saya
+## 🧑‍💻 About Me
 
-Saya seorang fisikawan komputasi yang berfokus pada **spektroskopi LIBS (Laser-Induced Breakdown Spectroscopy)** dan analisis data eksperimen skala besar menggunakan **High Performance Computing (HPC)**. Saya mengembangkan pipeline analisis otomatis — mulai dari fitting profil Voigt, kalkulasi CF-LIBS, hingga visualisasi data interaktif.
+I'm a computational physicist focused on **LIBS (Laser-Induced Breakdown Spectroscopy)** and large-scale experimental data analysis using **High Performance Computing (HPC)**. I build automated analysis pipelines — from Voigt profile fitting and CF-LIBS calculations to interactive data visualization.
 
-- 🔬 **Riset:** Spektroskopi LIBS, analisis unsur, pemrosesan sinyal optik
-- 🖥️ **HPC:** Simulasi berbasis CPU cluster, manajemen job batch
-- 📊 **Analisis:** Python, NumPy, SciPy, pandas, matplotlib
-- 📝 **Publikasi:** ICTAP, ICCAS
+- 🔬 **Research:** LIBS spectroscopy, elemental analysis, optical signal processing
+- 🖥️ **HPC:** CPU cluster simulation, batch job management
+- 📊 **Analysis:** Python, NumPy, SciPy, pandas, matplotlib
+- 📝 **Publications:** ICTAP, ICCAS
 
 ---
 
-## 🛠️ Skill Set
+## 🛠️ Tech Stack
 
 <table>
   <tr>
     <td valign="top" width="33%">
-      <h3>Sains & Komputasi</h3>
+      <h3>Science & Computing</h3>
       <ul>
         <li>Python (SciPy, NumPy, pandas)</li>
-        <li>Spektroskopi LIBS & Voigt Fitting</li>
+        <li>LIBS Spectroscopy & Voigt Fitting</li>
         <li>HPC / Batch Job (Linux Cluster)</li>
-        <li>Analisis Statistik & ANOVA</li>
+        <li>Statistical Analysis & ANOVA</li>
         <li>LaTeX</li>
       </ul>
     </td>
@@ -36,15 +36,15 @@ Saya seorang fisikawan komputasi yang berfokus pada **spektroskopi LIBS (Laser-I
       <h3>Tooling & DevOps</h3>
       <ul>
         <li>Git & GitHub Actions</li>
-        <li>Linux / Bash scripting</li>
-        <li>Docker (dasar)</li>
+        <li>Linux / Bash Scripting</li>
+        <li>Docker (basic)</li>
       </ul>
     </td>
     <td valign="top" width="33%">
-      <h3>Web & Lainnya</h3>
+      <h3>Web & Others</h3>
       <ul>
         <li>HTML, CSS, JavaScript</li>
-        <li>Node.js (dasar)</li>
+        <li>Node.js (basic)</li>
         <li>Figma</li>
       </ul>
     </td>
@@ -62,7 +62,7 @@ Saya seorang fisikawan komputasi yang berfokus pada **spektroskopi LIBS (Laser-I
 
 ---
 
-## 🐍 Kontribusi Snake
+## 🐍 Contribution Snake
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/birrulwldain/birrulwldain/output/github-contribution-grid-snake.svg" alt="GitHub contribution snake animation"/>
